@@ -24,7 +24,7 @@ RAYLIB_FLAGS_LINUX := $(shell pkg-config --libs --cflags raylib)
 RAYLIB_FLAGS_WIN := -L$(LIB_DIR_WIN)/bin -lraylib -lopengl32 -lgdi32 -lwinmm
 
 # Project name
-PROJECT_NAME := "Shadow Protocol"
+PROJECT_NAME := "Shadow\ Protocol"
 
 # Output executable names
 TARGET_LINUX := $(BIN_DIR)/$(PROJECT_NAME)_exe
@@ -80,9 +80,8 @@ $(TARGET_LINUX_DEBUG): $(OBJS) | $(BIN_DIR)
 clean:
 	@echo "Cleaning up..."
 	rm -rf $(OBJ_DIR)/*
-	rm -rf $(BIN_DIR)/$(PROJECT_NAME)
-	rm -rf $(BIN_DIR)/$(PROJECT_NAME)_debug
-	rm -rf $(BIN_DIR)/$(PROJECT_NAME).exe
+	rm -rf $(BIN_DIR)/*_debug
+	rm -rf $(BIN_DIR)/*exe
 
 # Phony targets
 .PHONY: all linux windows clean debug release

@@ -1,6 +1,10 @@
 #include "scene.hpp"
 #include <iostream>
 
+[[noreturn]] void ThrowNotFoundException(std::string &id){
+    throw std::out_of_range("Error. Object with id " + id + " not found in scene. Terminating abnormally...");
+}
+
 Scene::Scene()
 {
 }
@@ -44,64 +48,40 @@ void Scene::AddObjectList(std::map<std::string, GameObject *> _objects)
     objects.merge(_objects);
 }
 
-GameObject &Scene::GetObject(std::string id)
+GameObject &Scene::GetObject(std::string &id)
 {
     auto it = objects.find(id);
     if (it != objects.end())
-    {
         return *it->second;
-    }
     else
-    {
-        std::cerr << "Error! Object " << id << " not found!";
-        static GameObject defaultObj;
-        return defaultObj;
-    }
+        ThrowNotFoundException(id);
 }
 
-const GameObject &Scene::GetObject(std::string id) const
+const GameObject &Scene::GetObject(std::string &id) const
 {
     auto it = objects.find(id);
     if (it != objects.end())
-    {
         return *it->second;
-    }
     else
-    {
-        std::cerr << "Error! Object " << id << " not found!";
-        static GameObject defaultObj;
-        return defaultObj;
-    }
+        ThrowNotFoundException(id);
 }
 
-UIContainer &Scene::GetUI(std::string id)
+UIContainer &Scene::GetUI(std::string &id)
 {
     auto it = interfaces.find(id);
     if (it != interfaces.end())
-    {
         return *it->second;
-    }
     else
-    {
-        std::cerr << "Error! Object " << id << " not found!";
-        static UIContainer defaultui;
-        return defaultui;
-    }
+        ThrowNotFoundException(id);
 }
 
-const UIContainer &Scene::GetUI(std::string id) const
+const UIContainer &Scene::GetUI(std::string &id) const
 {
     auto it = interfaces.find(id);
     if (it != interfaces.end())
-    {
         return *it->second;
-    }
     else
-    {
-        std::cerr << "Error! Object " << id << " not found!";
-        static UIContainer defaultui;
-        return defaultui;
-    }
+        ThrowNotFoundException(id);
 }
 
 void Scene::Draw() const
@@ -109,7 +89,6 @@ void Scene::Draw() const
     BeginDrawing();
         ClearBackground(BLACK);
         BeginMode2D(camera);
-            DrawBackground(true, camera);
             for (auto &obj : objects)
             {
                 obj.second->Draw();

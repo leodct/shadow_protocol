@@ -19,10 +19,10 @@ public:
     void RemoveObject(std::string id);
     void AddObjectList(std::map<std::string, GameObject*> _objects);
 
-    GameObject        &GetObject(std::string id);
-    const GameObject  &GetObject(std::string id) const;
-    UIContainer       &GetUI(std::string id);
-    const UIContainer &GetUI(std::string id) const;
+    GameObject        &GetObject(std::string &id);
+    const GameObject  &GetObject(std::string &id) const;
+    UIContainer       &GetUI(std::string &id);
+    const UIContainer &GetUI(std::string &id) const;
 
     void Draw() const;
     void Update();

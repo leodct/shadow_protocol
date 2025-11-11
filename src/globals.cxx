@@ -6,29 +6,6 @@ Settings gameSettings                     = { false, 90, 0.15f };
 bool closeGame                            = false;
 SceneManager scene_manager;
 
-void DrawBackground(bool tiled, Camera2D camera)
-{
-    Vector2 TL = {camera.target.x - camera.offset.x, camera.target.y - camera.offset.y};
-    if (!tiled){
-        DrawTextureV(background_texture, TL, WHITE);
-    }
-    else{ // Tiled
-        for (int i = TL.x; i < WINDOW_SIZE.x; i += background_texture.width){
-            for (int j = TL.y; j < WINDOW_SIZE.y; j += background_texture.height){
-                DrawTextureV(background_texture, Vector2{(float)i,(float)j}, WHITE);
-            }
-        }
-    }
-}
-
-void LoadCosmetics()
-{
-    cosmetics_textures.resize(static_cast<int>(COSMETICS::SIZE));
-    cosmetics_textures[0] = Texture2D();
-    cosmetics_textures[1] = LoadTexture((COSMETICS_PATH/"daisy.png").u8string().c_str());
-    cosmetics_textures[2] = LoadTexture((COSMETICS_PATH/"sunglasses.png").u8string().c_str());
-    cosmetics_textures[3] = LoadTexture((COSMETICS_PATH/"red_bowtie.png").u8string().c_str());
-}
 
 // --- SHADER SHENANIGANS ---
 

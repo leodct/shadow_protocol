@@ -10,6 +10,7 @@
 
 class UIElement : public GameObject{
 protected:
+    Texture2D texture;
     int  draw_order;
     bool active;
     bool enabled;
