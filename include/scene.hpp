@@ -13,16 +13,16 @@ public:
     Scene();
     ~Scene();
     
-    void AddUi(std::string id, UIContainer *_ui);
-    void RemoveUI(std::string id);
-    void AddObject(std::string id, GameObject *_object);
-    void RemoveObject(std::string id);
+    void AddUi(const        std::string &id, UIContainer *_ui);
+    void RemoveUI(const     std::string &id);
+    void AddObject(const    std::string &id, GameObject *_object);
+    void RemoveObject(const std::string &id);
     void AddObjectList(std::map<std::string, GameObject*> _objects);
 
-    GameObject        &GetObject(std::string &id);
-    const GameObject  &GetObject(std::string &id) const;
-    UIContainer       &GetUI(std::string &id);
-    const UIContainer &GetUI(std::string &id) const;
+    GameObject        &GetObject(const std::string &id);
+    const GameObject  &GetObject(const std::string &id) const;
+    UIContainer       &GetUI(const     std::string &id);
+    const UIContainer &GetUI(const     std::string &id) const;
 
     void Draw() const;
     void Update();
@@ -37,8 +37,8 @@ public:
     SceneManager();
     ~SceneManager();
 
-    void   AddScene(std::string scene_id, Scene *_scene);
-    void   LoadScene(std::string scene_id);
+    void   AddScene(const  std::string &scene_id, Scene *_scene);
+    void   LoadScene(const std::string &scene_id);
     Scene& GetActiveScene();
 
     void Draw() const;

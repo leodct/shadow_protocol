@@ -46,18 +46,6 @@ bool AnimatedTexture::IsInitialized() const
     return initialized;
 }
 
-void AnimatedTexture::Load(std::string texture_name, int frame_count, int fps, bool _loop)
-{
-    texture_names = texture_name;
-    loop = _loop;
-    ms_per_frame      = std::chrono::milliseconds(1000 / fps);
-    last_frame_change = std::chrono::steady_clock::now();
-    frames.resize(frame_count);
-    current_frame = 0;
-    play = loop;
-    LoadFrames(texture_names, frames.size());
-}
-
 void AnimatedTexture::Play()
 {
     play = true;

@@ -1,7 +1,7 @@
 #include "scene.hpp"
 #include <iostream>
 
-[[noreturn]] void ThrowNotFoundException(std::string &id){
+[[noreturn]] void ThrowNotFoundException(const std::string &id){
     throw std::out_of_range("Error. Object with id " + id + " not found in scene. Terminating abnormally...");
 }
 
@@ -21,23 +21,23 @@ Scene::~Scene()
     }
 }
 
-void Scene::AddUi(std::string id, UIContainer *_ui)
+void Scene::AddUi(const std::string &id, UIContainer *_ui)
 {
     interfaces.emplace(id, _ui);
 }
 
-void Scene::RemoveUI(std::string id)
+void Scene::RemoveUI(const std::string &id)
 {
     delete interfaces[id];
     interfaces.erase(id);
 }
 
-void Scene::AddObject(std::string id, GameObject *_object)
+void Scene::AddObject(const std::string &id, GameObject *_object)
 {
     objects.emplace(id, _object);
 }
 
-void Scene::RemoveObject(std::string id)
+void Scene::RemoveObject(const std::string &id)
 {
     delete objects[id];
     objects.erase(id);
@@ -48,7 +48,7 @@ void Scene::AddObjectList(std::map<std::string, GameObject *> _objects)
     objects.merge(_objects);
 }
 
-GameObject &Scene::GetObject(std::string &id)
+GameObject &Scene::GetObject(const std::string &id)
 {
     auto it = objects.find(id);
     if (it != objects.end())
@@ -57,7 +57,7 @@ GameObject &Scene::GetObject(std::string &id)
         ThrowNotFoundException(id);
 }
 
-const GameObject &Scene::GetObject(std::string &id) const
+const GameObject &Scene::GetObject(const std::string &id) const
 {
     auto it = objects.find(id);
     if (it != objects.end())
@@ -66,7 +66,7 @@ const GameObject &Scene::GetObject(std::string &id) const
         ThrowNotFoundException(id);
 }
 
-UIContainer &Scene::GetUI(std::string &id)
+UIContainer &Scene::GetUI(const std::string &id)
 {
     auto it = interfaces.find(id);
     if (it != interfaces.end())
@@ -75,7 +75,7 @@ UIContainer &Scene::GetUI(std::string &id)
         ThrowNotFoundException(id);
 }
 
-const UIContainer &Scene::GetUI(std::string &id) const
+const UIContainer &Scene::GetUI(const std::string &id) const
 {
     auto it = interfaces.find(id);
     if (it != interfaces.end())
@@ -136,12 +136,12 @@ SceneManager::~SceneManager()
     }
 }
 
-void SceneManager::AddScene(std::string scene_id, Scene *_scene)
+void SceneManager::AddScene(const std::string &scene_id, Scene *_scene)
 {
     scenes.emplace(scene_id, _scene);
 }
 
-void SceneManager::LoadScene(std::string scene_id)
+void SceneManager::LoadScene(const std::string &scene_id)
 {
     auto it = scenes.find(scene_id);
     if (it == scenes.end())
