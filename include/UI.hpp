@@ -36,6 +36,7 @@ public:
     /**
      * @brief Set the `UIElement`'s draw order.
      * @param _order An integer determining the new order.
+     * @return The `UIElement` object's `draw_order`.
      * @note If 2 `UIElement` objects have different draw orders, the one with the highest order will be drawn above.
      * @note ` @p _order ` Must be in the [-100, 100] range. If it is outside it will be clamped.
      */
@@ -52,7 +53,7 @@ public:
     void SetDisplayState(bool _active);
     /**
      * @brief Check the display state.
-     * @return A boolean value that determines whether the `UIElement` should drawn or not.
+     * @return @b True if the `UIElement` will be drawn on next `Draw()` call. @b False otherwise.
      */
     bool GetDisplayState();
 
@@ -70,7 +71,7 @@ public:
     void ToggleEnabled();
     /**
      * @brief Check if the object is enabled, i.e. calling the `Update` function causes it to run the update logic.
-     * @return A boolean value indicating whether the `UIElement` is enabled or not.
+     * @return @b True if the next `Update()` call will run the update logic. @b False otherwise.
      */
     bool IsEnabled() const;
     
@@ -136,44 +137,113 @@ public:
      */
     const UIElement        &GetElement(std::string id) const;
 
+    /**
+     * @brief Get this `UIContainer` object's `draw_order`.
+     * @note If 2 `UIElement` objects have different draw orders, the one with the highest order will be drawn above.
+     */
     int  GetDrawOrder() const;
+    /**
+     * @brief Change this `UIContaier` object's `draw_order` to @p _order.
+     * @param _order New `draw_order` to be set.
+     * @note If 2 `UIElement` objects have different draw orders, the one with the highest order will be drawn above.
+     * @note ` @p _order ` Must be in the [-100, 100] range. If it is outside it will be clamped.
+     */
     void SetDrawOrder(int _order);
 
+    /**
+     * @brief Calls the `Update()` method on all stored `UIElement` objects.
+     */
     void Update();
+    /**
+     * @brief Calls the `Draw()` method on all stored `UIElement` objects.
+     */
     void Draw() const;
 
+    /**
+     * @brief Calls the `Enable()` method on all stored `UIElement` objects.
+     */
     void EnableAll();
+    /**
+     * @brief Calls the `Disable()` method on all stored `UIElement` objects.
+     */
     void DisableAll();
+    /**
+     * @brief Calls the `SetDisplayState( @p value )` method on all stored `UIElement` objects.
+     * @param value Value to set as `display_state` on all stored `UIElement` objects.
+     */
     void SetAllVisibilityTo(bool value);
 };
 
+/**
+ * @brief Namespace containing all child classes of `UIElement`.
+ */
 namespace UI
 {
 
     // --------------------
     // --- BUTTON CLASS ---
     // --------------------
+    /**
+     * @brief Basic button class.
+     */
     class Button : public UIElement {
     private:
-        Texture2D texture;
-        static Color TINT_PRESS;
-        bool hover, press;
-        void InitButton();
+        Texture2D texture;                      /** @brief Base `Button` texture.                                                 */
+        static Color TINT_PRESS;                /** @brief Tint to apply to the texture when `Button` is pressed.                 */
+        bool hover;                             /** @brief Whether the mouse is hovering over the `Button`.                       */
+        bool press;                             /** @brief Whether `MOUSE_BUTTON_LEFT` is being pressed while `hover` is @b true. */
+        Rectangle hitbox;                       /** @brief Rectangle that defines the bounds of the `Button`                      */
+        std::function<void()> callbackFunction; /** @brief Function to be called when the `Button` is released.                   */
+        /**
+         * @brief Auxiliary function for initializing `Button` parameters.
+         */
+        void InitButton();   
+        /**
+         * @brief Auxiliary function for initializing the `Button` texture.
+         */    
         void TextureSetup();
-        Rectangle hitbox;
 
-        std::function<void()> callbackFunction;
 
     public:
+        /**
+         * @brief Create a new `Button` object with a texture given by ` @p _texture `, with a transform given by ` @p _transform ` and with a default callback.
+         * @param _texture Texture that defines how the `Button` object should be drawn.
+         * @param _transform Transform that defines the `Button` object.
+         */
         Button(Texture2D _texture, Transform2D _transform);
 
+        /**
+         * @brief Check whether the `Button` is being pressed.
+         * @return @b True if `MOUSE_BUTTON_LEFT` is being pressed while @b `IsHover()` is @b true. @b False otherwise.
+         */
         bool IsPressed() const;
+        /**
+         * @brief Check whether the `Button` object is no longer being pressed.
+         * @return @b True if the `Button` object is not being pressed in the
+         * current update cycle but was in the previous one. @b False otherwise.
+         */
         bool IsReleased() const;
+        /**
+         * @brief Check whether the mouse cursor is hovering over the `Button` object.
+         * @return @b True If the position of the mouse cursor lies within the bounds of
+         * the `Button` object defined by `hitbox`. @b False otherwise.
+         */
         bool IsHover() const;
 
+        /**
+         * @brief Define the function to be called when the button is released.
+         * @param callback Function to be called.
+         */
         void DefineOnPressCallback(std::function<void()> callback);
 
+        /**
+         * @brief Run the updating logic on the `Button` object. Calculates `hover` 
+         * and `press`, and determine if the `callbackFunction` should be called.
+         */
         void Update() override;
+        /**
+         * @brief Draw the `Button` object.
+         */
         void Draw() const override;
     };
 

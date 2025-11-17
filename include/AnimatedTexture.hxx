@@ -6,7 +6,7 @@
 #include <chrono>
 
 /** 
- * @brief ### Animated texture class.
+ * @brief ## Animated texture class.
  * @brief Manage a texture with an animation. 
  */
 class AnimatedTexture{
@@ -49,7 +49,8 @@ public:
     void Initialize();
     /**
      * @brief Check the initialization state.
-     * @return A boolean value. If @b true that means the texture is ready for use. It will not be rendered otherwise.
+     * @return @b True if the texture is ready to be drawn. @b False otherwise.
+     * @note If @b false, the texture will not be rendered.
      */
     bool IsInitialized() const;
 

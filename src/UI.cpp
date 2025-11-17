@@ -111,6 +111,8 @@ int UIContainer::GetDrawOrder() const
 void UIContainer::SetDrawOrder(int _order)
 {
     draw_order = _order;
+    if (draw_order < MIN_DRAW_ORDER) draw_order = MIN_DRAW_ORDER;
+    if (draw_order > MAX_DRAW_ORDER) draw_order = MAX_DRAW_ORDER;
 }
 
 void UIContainer::Update()
