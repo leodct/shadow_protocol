@@ -43,11 +43,6 @@ void Scene::RemoveObject(const std::string &id)
     objects.erase(id);
 }
 
-void Scene::AddObjectList(std::map<std::string, GameObject *> _objects)
-{
-    objects.merge(_objects);
-}
-
 GameObject &Scene::GetObject(const std::string &id)
 {
     auto it = objects.find(id);
@@ -123,10 +118,11 @@ void Scene::Update()
 // =================================
 // === SCENE MANAGER SHENANIGANS ===
 // =================================
-Scene SceneManager::emptyScene = Scene();
 
-SceneManager::SceneManager() : activeScene(&emptyScene)
+SceneManager::SceneManager()
 {
+    scenes.emplace("scene_default", new Scene());
+    activeScene = scenes["scene_default"];
 }
 
 SceneManager::~SceneManager()
@@ -141,13 +137,23 @@ void SceneManager::AddScene(const std::string &scene_id, Scene *_scene)
     scenes.emplace(scene_id, _scene);
 }
 
+void SceneManager::RemoveScene(const std::string &scene_id)
+{
+    auto it = scenes.find(scene_id);
+    if (it != scenes.end())
+    {
+        delete it->second;
+        scenes.erase(it);
+    }
+
+}
+
 void SceneManager::LoadScene(const std::string &scene_id)
 {
     auto it = scenes.find(scene_id);
     if (it == scenes.end())
     {
-        activeScene = &emptyScene;
-        std::cerr << "Error! Empty scene loaded!" << std::endl;
+        ThrowNotFoundException(scene_id);
     }
     else
     {
@@ -156,6 +162,11 @@ void SceneManager::LoadScene(const std::string &scene_id)
 }
 
 Scene &SceneManager::GetActiveScene()
+{
+    return *activeScene;
+}
+
+const Scene &SceneManager::GetActiveScene() const
 {
     return *activeScene;
 }

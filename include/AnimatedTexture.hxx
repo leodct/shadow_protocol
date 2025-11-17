@@ -38,7 +38,7 @@ public:
      */
     AnimatedTexture(std::string texture_name, int frame_count, int fps = 60, bool _loop = true);
     /**
-     * @brief Default destructor. Correctly cleans all memory reserved by the object.
+     * @brief Correctly cleans all memory reserved by the object.
      */
     ~AnimatedTexture();
 
