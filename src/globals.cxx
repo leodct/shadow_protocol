@@ -41,3 +41,8 @@ void ConfigOutlineShader(bool outline, float thickness)
     int outlineSizeLoc = GetShaderLocation(outline_shader, "outlineSize");
     SetShaderValue(outline_shader, outlineSizeLoc, &thickness, SHADER_UNIFORM_FLOAT);
 }
+
+void ThrowNotFoundException(const std::string &id)
+{
+    throw std::out_of_range("Error. Object with id " + id + " not found. Terminating abnormally...");
+}

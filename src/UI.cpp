@@ -6,32 +6,8 @@ using namespace UI;
 // Static member initialization
 Color Button::TINT_PRESS = { 150, 150, 150, 255 };
 
-void UIElement::Init()
+UIElement::UIElement() : draw_order(0), enabled(true), active(true)
 {
-    draw_order = 0;
-    enabled = active;
-}
-
-UIElement::UIElement(bool _active) : active(_active)
-{
-    Init();
-}
-
-UIElement::UIElement(Vector2 position, bool _active) : active(_active)
-{
-    Init();
-    transform.position = position;
-}
-
-UIElement::UIElement(Transform2D _transform, bool _active) : active(_active)
-{
-    Init();
-    transform = _transform;
-}
-
-UIElement::~UIElement()
-{
-    UnloadTexture(texture);
 }
 
 int UIElement::GetDrawOrder() const
@@ -104,21 +80,27 @@ void UIContainer::RemoveElement(std::string id)
     elements.erase(id);
 }
 
-UIElement* UIContainer::GetElement(std::string id)
+UIElement &UIContainer::GetElement(std::string id)
 {
     auto it = elements.find(id);
     if (it != elements.end()) {
-        return it->second;
+        return *(it->second);
     }
-    return nullptr;}
+    else{
+        ThrowNotFoundException(id);
+    }
+    
+}
 
-const UIElement* UIContainer::GetElement(std::string id) const
+const UIElement &UIContainer::GetElement(std::string id) const
 {
     auto it = elements.find(id);
     if (it != elements.end()) {
-        return it->second;
+        return *(it->second);
     }
-    return nullptr;
+    else{
+        ThrowNotFoundException(id);
+    }
 }
 
 int UIContainer::GetDrawOrder() const
@@ -193,50 +175,6 @@ void Button::TextureSetup()
 }
 
 // Button methods
-Button::Button() : hover(false), press(false) {
-    InitButton();
-}
-
-Button::Button(Vector2 position)
-{
-    transform.position = position;
-    InitButton();
-}
-
-Button::Button(Vector2 position, float rotation)
-{
-    transform.position = position;
-    transform.rotation = rotation;
-    InitButton();
-}
-
-Button::Button(Transform2D _transform)
-{
-    transform = _transform;
-    InitButton();
-}
-
-Button::Button(Texture2D _texture)
-{
-    texture = _texture;
-    InitButton();
-}
-
-Button::Button(Texture2D _texture, Vector2 position)
-{
-    texture            = _texture;
-    transform.position = position;
-    InitButton();
-}
-
-Button::Button(Texture2D _texture, Vector2 position, float rotation)
-{
-    texture            = _texture;
-    transform.position = position;
-    transform.rotation = rotation;
-    InitButton();
-}
-
 Button::Button(Texture2D _texture, Transform2D _transform)
 {
     texture   = _texture;
@@ -403,11 +341,6 @@ void UI::Label::Draw() const
     DrawTextPro(GetFontDefault(), text.c_str(), transform.position, origin, transform.rotation, text_size, spacing, text_col);
 }
 
-UI::ImageDisplay::ImageDisplay(Texture2D texture, Transform2D _transform) : image(texture)
-{
-    transform = _transform;
-    origin = {image.width / 2.0f, image.height / 2.0f};
-}
 
 UI::ImageDisplay::ImageDisplay(Texture2D texture, Transform2D _transform, Vector2 _origin) : image(texture), origin(_origin)
 {

@@ -1,10 +1,6 @@
 #include "scene.hpp"
 #include <iostream>
 
-[[noreturn]] void ThrowNotFoundException(const std::string &id){
-    throw std::out_of_range("Error. Object with id " + id + " not found in scene. Terminating abnormally...");
-}
-
 Scene::Scene()
 {
 }

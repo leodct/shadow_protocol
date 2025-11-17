@@ -8,48 +8,133 @@
 #include <functional>
 #include "gameObject.hxx"
 
+/**
+ * @brief ## UI Element class
+ * @brief Virtual parent class for all UI Elements. Contains generic methods to Enable/Disable, Show/Hide and modify the draw order.
+ */
 class UIElement : public GameObject{
 protected:
-    Texture2D texture;
-    int  draw_order;
-    bool active;
-    bool enabled;
-    void Init();
+    int  draw_order; // Defines the drawing priority, if 2 elements have different draw orders the one with the higher order will be drawn above the other one.
+    bool active;     // Determines whether the `UIElement` should be drawn.
+    bool enabled;    // Determines whether the `UIElement` should update.
 public:
-    UIElement(bool _active = true);
-    UIElement(Vector2 position, bool _active = true);
-    UIElement(Transform2D _transform, bool _active = true);
-    virtual ~UIElement();
+    /**
+     * @brief Create a new, empty UIElement.
+     */
+    UIElement();
+    /**
+     * @brief Virtual destructor.
+     */
+    virtual ~UIElement() = default;
 
+    /**
+     * @brief Check the `UIElement`'s draw order.
+     * @return An int `draw_order` that determines the drawing priority for the `UIElement`.
+     * @note If 2 `UIElement` objects have different draw orders, the one with the highest order will be drawn above.
+     */
     int  GetDrawOrder() const;
+    /**
+     * @brief Set the `UIElement`'s draw order.
+     * @param _order An integer determining the new order.
+     * @note If 2 `UIElement` objects have different draw orders, the one with the highest order will be drawn above.
+     * @note ` @p _order ` Must be in the [-100, 100] range. If it is outside it will be clamped.
+     */
     void SetDrawOrder(int _order);
 
+    /**
+     * @brief Switch the display state (whether to draw the `UIElement` or not). If @b true then @b false and vice-versa.
+     */
     void ToggleDisplayState();
+    /**
+     * @brief Set the display state,
+     * @param _active A boolean value telling the `UIElement` whether it sould be drawn or not.
+     */
     void SetDisplayState(bool _active);
+    /**
+     * @brief Check the display state.
+     * @return A boolean value that determines whether the `UIElement` should drawn or not.
+     */
     bool GetDisplayState();
 
+    /**
+     * @brief Enables the update logic of the object.
+     */
     void Enable();
+    /**
+     * @brief Disables the update logic of the object.
+     */
     void Disable();
+    /**
+     * @brief Toggles the update logic of the object, if @b true then @b false and vice-versa.
+     */
     void ToggleEnabled();
+    /**
+     * @brief Check if the object is enabled, i.e. calling the `Update` function causes it to run the update logic.
+     * @return A boolean value indicating whether the `UIElement` is enabled or not.
+     */
     bool IsEnabled() const;
     
-
+    /**
+     * @brief Draw the `UIElement`.
+     */
     virtual void Draw() const = 0;
+    /**
+     * @brief Update the `UIElement`.
+     */
     virtual void Update() = 0;
 };
 
+/**
+ * @brief ## UIContainer class
+ * @brief Stores and manages multiple `UIElement` objects and their memory.
+ * @note The `UIContainer` class automatically manages the reserved memory of all it's `UIElement` objects. When given a
+ * pointer to an object, said object's ownership will be passed to the respective `UIContainer` for centralized memory management.
+ */
 class UIContainer {
 private:
+    /**
+     * @brief Container storing all `UIElement` objects and their `std::string` identifiers.
+     */
     std::map<std::string, UIElement*> elements;
+    /**
+     * @brief Order in which the `UIContainer` will be drawn.
+     */
     int draw_order;
 public:
+    /**
+     * @brief Default constructor. Creates an empty `UIContainer` object with no elements and a `draw_order` of zero.
+     */
     UIContainer();
+    /**
+     * @brief Automatically cleans up the memory of all the stored `UIElement` objects.
+     */
     ~UIContainer();
 
+    /**
+     * @brief Store a new `UIElement` with an identifier ` @p id `.
+     * @param id String identifier of the @p _element.
+     * @param _element Pointer to the `UIElement` that will be stored.
+     * @note Ownership of @p _element will be passed to the `UIContainer` object.
+     */
     void AddElement(std::string id, UIElement* _element);
+    /**
+     * @brief Remove an element given by it's unique identifier.
+     * @param id String identifier of the desired `UIElement`.
+     * @warning The removed element's memory will also be liberated! Plan accordingly!
+     */
     void RemoveElement(std::string id);
-    UIElement*              GetElement(std::string id);
-    const UIElement*        GetElement(std::string id) const;
+    /**
+     * @brief Get a reference to a stored `UIElement`.
+     * @param id String identifer of the desired `UIElement`.
+     * @return A @b non-constant reference to the `UIElement` identified by @p id.
+     */
+    UIElement              &GetElement(std::string id);
+    /**
+     * @brief Get a @b constant reference to a stored `UIElement`.
+     * @param id String identifier of the desired `UIElement`.
+     * @return A @b constant reference to the `UIElement` identified by @p id.
+     */
+    const UIElement        &GetElement(std::string id) const;
 
     int  GetDrawOrder() const;
     void SetDrawOrder(int _order);
@@ -70,6 +155,7 @@ namespace UI
     // --------------------
     class Button : public UIElement {
     private:
+        Texture2D texture;
         static Color TINT_PRESS;
         bool hover, press;
         void InitButton();
@@ -79,13 +165,6 @@ namespace UI
         std::function<void()> callbackFunction;
 
     public:
-        Button();
-        Button(Vector2 position);
-        Button(Vector2 position, float rotation);
-        Button(Transform2D _transform);
-        Button(Texture2D _texture);
-        Button(Texture2D _texture, Vector2 position);
-        Button(Texture2D _texture, Vector2 position, float rotation);
         Button(Texture2D _texture, Transform2D _transform);
 
         bool IsPressed() const;
@@ -154,7 +233,6 @@ namespace UI
         Texture2D image;
         Vector2   origin;
     public:
-        ImageDisplay(Texture2D texture, Transform2D _transform = {});
         ImageDisplay(Texture2D texture, Transform2D _transform, Vector2 _origin);
         ~ImageDisplay();
 

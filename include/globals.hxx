@@ -62,4 +62,5 @@ void InitShaders();
 
 void ConfigOutlineShader(bool outline, float thickness = OUTLINE_SHADER_THICKNESS_DEFAULT);
 
+[[noreturn]] void ThrowNotFoundException(const std::string &id);
 #endif
