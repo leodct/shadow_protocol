@@ -63,11 +63,15 @@ rgame relies on [raylib](https://raylib.com), which must be installed on your sy
 - On **Windows**: Follow the raylib installation instructions on their [GitHub page](https://github.com/raysan5/raylib) or [raylib website](https://raylib.com).
 - On **macOS**: You can use `brew` to install raylib:
 
+  ```brew
   brew install raylib
+  ```
 
 - On **Linux** (Ubuntu):
 
+  ```bash
   sudo apt-get install libraylib-dev
+  ```
 
 Once raylib is installed, you're ready to start building with RGame!
 
