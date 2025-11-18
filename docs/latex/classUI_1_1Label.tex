@@ -1,0 +1,303 @@
+\hypertarget{classUI_1_1Label}{}\doxysection{UI\+::Label Class Reference}
+\label{classUI_1_1Label}\index{UI::Label@{UI::Label}}
+
+
+\#\# \mbox{\hyperlink{classUI_1_1Label}{Label}} class.  
+
+
+
+
+{\ttfamily \#include $<$UI.\+hpp$>$}
+
+
+
+Inheritance diagram for UI\+::Label\+:
+% FIG 0
+
+
+Collaboration diagram for UI\+::Label\+:
+% FIG 1
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686}{ALIGNMENT}} \{ \mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686a684d325a7303f52e64011467ff5c5758}{LEFT}}
+, \mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686a43eedd8685eb86592022f8da962e3474}{MIDDLE}}
+, \mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686a21507b40c80068eda19865706fdc2403}{RIGHT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Determine whether the position given by the object\textquotesingle{}s {\ttfamily transform} parameter is the {\ttfamily LEFT}, {\ttfamily MIDDLE} or {\ttfamily RIGHT}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUI_1_1Label_a77a97a5315b92506e449e5fb94103c66}{Label}} (\mbox{\hyperlink{structTransform2D}{Transform2D}} \+\_\+transform=\{\}, std\+::string \+\_\+text=\char`\"{}text\char`\"{}, unsigned int \+\_\+text\+\_\+size=1, Color \+\_\+text\+\_\+col=BLACK, \mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686}{ALIGNMENT}} \+\_\+alignment=\mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686a684d325a7303f52e64011467ff5c5758}{ALIGNMENT\+::\+LEFT}})
+\begin{DoxyCompactList}\small\item\em Creates a new, empty {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object with default parameters. \end{DoxyCompactList}\item 
+std\+::string \& \mbox{\hyperlink{classUI_1_1Label_a4f777f69602274e25b42f55aeb170fc1}{Get\+Text}} ()
+\begin{DoxyCompactList}\small\item\em Get a reference to the text stored in the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}}. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classUI_1_1Label_ae76fd365066b77293ac6e7aa005fa155}{Get\+Text}} () const
+\begin{DoxyCompactList}\small\item\em Get a {\bfseries{constant}} reference to the text stored in the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUI_1_1Label_a8affebda43717c6891771f74151eca72}{Set\+Text}} (std\+::string \+\_\+text)
+\begin{DoxyCompactList}\small\item\em Change the stored text to a new string. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classUI_1_1Label_a4b2a718a0f0ad4614adcda9025bea7b1}{Get\+Font\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object\textquotesingle{}s {\ttfamily font\+\_\+size}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUI_1_1Label_ad493d623886cf88dca8d264f87f5ebb7}{Set\+Font\+Size}} (unsigned int \+\_\+size)
+\begin{DoxyCompactList}\small\item\em Change the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object\textquotesingle{}s {\ttfamily font\+\_\+size}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686}{ALIGNMENT}} \mbox{\hyperlink{classUI_1_1Label_a2b59c2f169a012bf5372fbbc2cda17fb}{Get\+Alignment}} () const
+\begin{DoxyCompactList}\small\item\em Check the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object\textquotesingle{}s text alignmnent. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUI_1_1Label_ab101e9be13a4d60d23a62f08a8a96363}{Set\+Alignment}} (\mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686}{ALIGNMENT}} \+\_\+alignment)
+\begin{DoxyCompactList}\small\item\em Change the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object\textquotesingle{}s alignment value. \end{DoxyCompactList}\item 
+Color \mbox{\hyperlink{classUI_1_1Label_a300dfefa23de60a5f1272f128ba66cea}{Get\+Text\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the text colour. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUI_1_1Label_a2a127b2ff1975f5895f7eaf08a7e7833}{Set\+Text\+Color}} (Color color)
+\begin{DoxyCompactList}\small\item\em Change the text colour. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUI_1_1Label_a97cfeef5bfa2b5efd001f6342b18b808}{Update}} () override=0
+\begin{DoxyCompactList}\small\item\em Overriden update method. Does nothing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUI_1_1Label_ab01706aea1215dd3d233e5ba990dcdd5}{Draw}} () const override
+\begin{DoxyCompactList}\small\item\em Draw the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Color \mbox{\hyperlink{classUI_1_1Label_a8859751a614cb40a301edce8ef5ff97b}{text\+\_\+col}}
+\item 
+std\+::string \mbox{\hyperlink{classUI_1_1Label_ad06b5882d8691772b7f3396fa04e5e91}{text}}
+\item 
+unsigned int \mbox{\hyperlink{classUI_1_1Label_acfc65aa27dd261c6234949fe054c6172}{text\+\_\+size}}
+\item 
+\mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686}{ALIGNMENT}} \mbox{\hyperlink{classUI_1_1Label_a994aade5d1934e28baa590356ed89178}{alignment}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\#\# \mbox{\hyperlink{classUI_1_1Label}{Label}} class. 
+
+Allows for drawing text as a {\ttfamily \mbox{\hyperlink{classUIElement}{UIElement}}}. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classUI_1_1Label_ad94920378b821e11ae275459cc498686}\label{classUI_1_1Label_ad94920378b821e11ae275459cc498686}} 
+\index{UI::Label@{UI::Label}!ALIGNMENT@{ALIGNMENT}}
+\index{ALIGNMENT@{ALIGNMENT}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{ALIGNMENT}{ALIGNMENT}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686}{UI\+::\+Label\+::\+ALIGNMENT}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Determine whether the position given by the object\textquotesingle{}s {\ttfamily transform} parameter is the {\ttfamily LEFT}, {\ttfamily MIDDLE} or {\ttfamily RIGHT}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!UI::Label@{UI::Label}}\index{UI::Label@{UI::Label}!LEFT@{LEFT}}}\mbox{\Hypertarget{classUI_1_1Label_ad94920378b821e11ae275459cc498686a684d325a7303f52e64011467ff5c5758}\label{classUI_1_1Label_ad94920378b821e11ae275459cc498686a684d325a7303f52e64011467ff5c5758}} 
+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MIDDLE@{MIDDLE}!UI::Label@{UI::Label}}\index{UI::Label@{UI::Label}!MIDDLE@{MIDDLE}}}\mbox{\Hypertarget{classUI_1_1Label_ad94920378b821e11ae275459cc498686a43eedd8685eb86592022f8da962e3474}\label{classUI_1_1Label_ad94920378b821e11ae275459cc498686a43eedd8685eb86592022f8da962e3474}} 
+MIDDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!UI::Label@{UI::Label}}\index{UI::Label@{UI::Label}!RIGHT@{RIGHT}}}\mbox{\Hypertarget{classUI_1_1Label_ad94920378b821e11ae275459cc498686a21507b40c80068eda19865706fdc2403}\label{classUI_1_1Label_ad94920378b821e11ae275459cc498686a21507b40c80068eda19865706fdc2403}} 
+RIGHT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUI_1_1Label_a77a97a5315b92506e449e5fb94103c66}\label{classUI_1_1Label_a77a97a5315b92506e449e5fb94103c66}} 
+\index{UI::Label@{UI::Label}!Label@{Label}}
+\index{Label@{Label}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{Label()}{Label()}}
+{\footnotesize\ttfamily UI\+::\+Label\+::\+Label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTransform2D}{Transform2D}}}]{\+\_\+transform = {\ttfamily \{\}},  }\item[{std\+::string}]{\+\_\+text = {\ttfamily \char`\"{}text\char`\"{}},  }\item[{unsigned int}]{\+\_\+text\+\_\+size = {\ttfamily 1},  }\item[{Color}]{\+\_\+text\+\_\+col = {\ttfamily BLACK},  }\item[{\mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686}{ALIGNMENT}}}]{\+\_\+alignment = {\ttfamily \mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686a684d325a7303f52e64011467ff5c5758}{ALIGNMENT\+::\+LEFT}}} }\end{DoxyParamCaption})}
+
+
+
+Creates a new, empty {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object with default parameters. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUI_1_1Label_ab01706aea1215dd3d233e5ba990dcdd5}\label{classUI_1_1Label_ab01706aea1215dd3d233e5ba990dcdd5}} 
+\index{UI::Label@{UI::Label}!Draw@{Draw}}
+\index{Draw@{Draw}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void UI\+::\+Label\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draw the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object. 
+
+
+
+Implements \mbox{\hyperlink{classUIElement_a195f4b75ce357c0810037cdba9e8b454}{UIElement}}.
+
+\mbox{\Hypertarget{classUI_1_1Label_a2b59c2f169a012bf5372fbbc2cda17fb}\label{classUI_1_1Label_a2b59c2f169a012bf5372fbbc2cda17fb}} 
+\index{UI::Label@{UI::Label}!GetAlignment@{GetAlignment}}
+\index{GetAlignment@{GetAlignment}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{GetAlignment()}{GetAlignment()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686}{UI\+::\+Label\+::\+ALIGNMENT}} UI\+::\+Label\+::\+Get\+Alignment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object\textquotesingle{}s text alignmnent. 
+
+\begin{DoxyReturn}{Returns}
+The {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object\textquotesingle{}s {\ttfamily alignment} value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUI_1_1Label_a4b2a718a0f0ad4614adcda9025bea7b1}\label{classUI_1_1Label_a4b2a718a0f0ad4614adcda9025bea7b1}} 
+\index{UI::Label@{UI::Label}!GetFontSize@{GetFontSize}}
+\index{GetFontSize@{GetFontSize}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{GetFontSize()}{GetFontSize()}}
+{\footnotesize\ttfamily unsigned int UI\+::\+Label\+::\+Get\+Font\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object\textquotesingle{}s {\ttfamily font\+\_\+size}. 
+
+\begin{DoxyReturn}{Returns}
+An unsigned integer value that determines the font size. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUI_1_1Label_a4f777f69602274e25b42f55aeb170fc1}\label{classUI_1_1Label_a4f777f69602274e25b42f55aeb170fc1}} 
+\index{UI::Label@{UI::Label}!GetText@{GetText}}
+\index{GetText@{GetText}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{GetText()}{GetText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string \& UI\+::\+Label\+::\+Get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get a reference to the text stored in the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}}. 
+
+\begin{DoxyReturn}{Returns}
+A {\bfseries{non-\/constant}} reference to the stored text. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUI_1_1Label_ae76fd365066b77293ac6e7aa005fa155}\label{classUI_1_1Label_ae76fd365066b77293ac6e7aa005fa155}} 
+\index{UI::Label@{UI::Label}!GetText@{GetText}}
+\index{GetText@{GetText}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{GetText()}{GetText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::string \& UI\+::\+Label\+::\+Get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get a {\bfseries{constant}} reference to the text stored in the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}}. 
+
+\begin{DoxyReturn}{Returns}
+A {\bfseries{constant}} reference to the stored text. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUI_1_1Label_a300dfefa23de60a5f1272f128ba66cea}\label{classUI_1_1Label_a300dfefa23de60a5f1272f128ba66cea}} 
+\index{UI::Label@{UI::Label}!GetTextColor@{GetTextColor}}
+\index{GetTextColor@{GetTextColor}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{GetTextColor()}{GetTextColor()}}
+{\footnotesize\ttfamily Color UI\+::\+Label\+::\+Get\+Text\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the text colour. 
+
+\begin{DoxyReturn}{Returns}
+An 8 bit RGBA value with the colour of the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object\textquotesingle{}s text. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUI_1_1Label_ab101e9be13a4d60d23a62f08a8a96363}\label{classUI_1_1Label_ab101e9be13a4d60d23a62f08a8a96363}} 
+\index{UI::Label@{UI::Label}!SetAlignment@{SetAlignment}}
+\index{SetAlignment@{SetAlignment}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{SetAlignment()}{SetAlignment()}}
+{\footnotesize\ttfamily void UI\+::\+Label\+::\+Set\+Alignment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686}{ALIGNMENT}}}]{\+\_\+alignment }\end{DoxyParamCaption})}
+
+
+
+Change the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object\textquotesingle{}s alignment value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+alignment} & The {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object\textquotesingle{}s new alignment value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUI_1_1Label_ad493d623886cf88dca8d264f87f5ebb7}\label{classUI_1_1Label_ad493d623886cf88dca8d264f87f5ebb7}} 
+\index{UI::Label@{UI::Label}!SetFontSize@{SetFontSize}}
+\index{SetFontSize@{SetFontSize}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{SetFontSize()}{SetFontSize()}}
+{\footnotesize\ttfamily void UI\+::\+Label\+::\+Set\+Font\+Size (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Change the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}} object\textquotesingle{}s {\ttfamily font\+\_\+size}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+size} & New size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUI_1_1Label_a8affebda43717c6891771f74151eca72}\label{classUI_1_1Label_a8affebda43717c6891771f74151eca72}} 
+\index{UI::Label@{UI::Label}!SetText@{SetText}}
+\index{SetText@{SetText}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{SetText()}{SetText()}}
+{\footnotesize\ttfamily void UI\+::\+Label\+::\+Set\+Text (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+text }\end{DoxyParamCaption})}
+
+
+
+Change the stored text to a new string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+text} & New text to display in the {\ttfamily \mbox{\hyperlink{classUI_1_1Label}{Label}}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUI_1_1Label_a2a127b2ff1975f5895f7eaf08a7e7833}\label{classUI_1_1Label_a2a127b2ff1975f5895f7eaf08a7e7833}} 
+\index{UI::Label@{UI::Label}!SetTextColor@{SetTextColor}}
+\index{SetTextColor@{SetTextColor}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{SetTextColor()}{SetTextColor()}}
+{\footnotesize\ttfamily void UI\+::\+Label\+::\+Set\+Text\+Color (\begin{DoxyParamCaption}\item[{Color}]{color }\end{DoxyParamCaption})}
+
+
+
+Change the text colour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The new colour to display. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUI_1_1Label_a97cfeef5bfa2b5efd001f6342b18b808}\label{classUI_1_1Label_a97cfeef5bfa2b5efd001f6342b18b808}} 
+\index{UI::Label@{UI::Label}!Update@{Update}}
+\index{Update@{Update}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void UI\+::\+Label\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+Overriden update method. Does nothing. 
+
+
+
+Implements \mbox{\hyperlink{classUIElement_ae7a76be901cacb3b87ec1637c5e22a6e}{UIElement}}.
+
+
+
+Implemented in \mbox{\hyperlink{classUI_1_1VariableDisplay_ad3fdb4bea2825dae65af40d29e4ce1b7}{UI\+::\+Variable\+Display$<$ T $>$}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classUI_1_1Label_a994aade5d1934e28baa590356ed89178}\label{classUI_1_1Label_a994aade5d1934e28baa590356ed89178}} 
+\index{UI::Label@{UI::Label}!alignment@{alignment}}
+\index{alignment@{alignment}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{alignment}{alignment}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686}{ALIGNMENT}} UI\+::\+Label\+::alignment\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUI_1_1Label_ad06b5882d8691772b7f3396fa04e5e91}\label{classUI_1_1Label_ad06b5882d8691772b7f3396fa04e5e91}} 
+\index{UI::Label@{UI::Label}!text@{text}}
+\index{text@{text}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily std\+::string UI\+::\+Label\+::text\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUI_1_1Label_a8859751a614cb40a301edce8ef5ff97b}\label{classUI_1_1Label_a8859751a614cb40a301edce8ef5ff97b}} 
+\index{UI::Label@{UI::Label}!text\_col@{text\_col}}
+\index{text\_col@{text\_col}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{text\_col}{text\_col}}
+{\footnotesize\ttfamily Color UI\+::\+Label\+::text\+\_\+col\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classUI_1_1Label_acfc65aa27dd261c6234949fe054c6172}\label{classUI_1_1Label_acfc65aa27dd261c6234949fe054c6172}} 
+\index{UI::Label@{UI::Label}!text\_size@{text\_size}}
+\index{text\_size@{text\_size}!UI::Label@{UI::Label}}
+\doxysubsubsection{\texorpdfstring{text\_size}{text\_size}}
+{\footnotesize\ttfamily unsigned int UI\+::\+Label\+::text\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{UI_8hpp}{UI.\+hpp}}\item 
+src/\mbox{\hyperlink{UI_8cpp}{UI.\+cpp}}\end{DoxyCompactItemize}

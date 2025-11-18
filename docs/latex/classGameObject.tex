@@ -1,0 +1,144 @@
+\hypertarget{classGameObject}{}\doxysection{Game\+Object Class Reference}
+\label{classGameObject}\index{GameObject@{GameObject}}
+
+
+\#\# Game Object parent class  
+
+
+
+
+{\ttfamily \#include $<$game\+Object.\+hxx$>$}
+
+
+
+Inheritance diagram for Game\+Object\+:
+% FIG 0
+
+
+Collaboration diagram for Game\+Object\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGameObject_a40e3f744f80cfcf623f7c525624e4e74}{Game\+Object}} (\mbox{\hyperlink{structTransform2D}{Transform2D}} \+\_\+transform=\{\})
+\begin{DoxyCompactList}\small\item\em Create a new {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} object with default parameters. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGameObject_a67ae2fa6e7916c799700cd659975d8ea}{$\sim$\+Game\+Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structTransform2D}{Transform2D}} \& \mbox{\hyperlink{classGameObject_a1b766775e2a696f276c65f41471f0c3d}{Get\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em Get a {\bfseries{constant}} reference to the object\textquotesingle{}s {\ttfamily transform} data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structTransform2D}{Transform2D}} \& \mbox{\hyperlink{classGameObject_aca765518ddce3cbd1b83939a0e36ef70}{Get\+Transform}} ()
+\begin{DoxyCompactList}\small\item\em Get a reference to the object\textquotesingle{}s {\ttfamily transform} data. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGameObject_a45171beb4d4ac8158a754fe41e735129}{Draw}} () const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to be overriden in child classes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGameObject_a7f5c1336131d246a1e4ec9047996cab8}{Update}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to be overriden in child classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structTransform2D}{Transform2D}} \mbox{\hyperlink{classGameObject_accfa9d004189a8b17bb18fb0bcd7b1a3}{transform}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\#\# Game Object parent class 
+
+Pure virtual class to provide generic methods to its child classes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameObject_a40e3f744f80cfcf623f7c525624e4e74}\label{classGameObject_a40e3f744f80cfcf623f7c525624e4e74}} 
+\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}}
+{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTransform2D}{Transform2D}}}]{\+\_\+transform = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Create a new {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} object with default parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+transform} & New object\textquotesingle{}s {\ttfamily transform} data. Defines position, rotation and scale. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameObject_a67ae2fa6e7916c799700cd659975d8ea}\label{classGameObject_a67ae2fa6e7916c799700cd659975d8ea}} 
+\index{GameObject@{GameObject}!````~GameObject@{$\sim$GameObject}}
+\index{````~GameObject@{$\sim$GameObject}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{$\sim$GameObject()}{~GameObject()}}
+{\footnotesize\ttfamily virtual Game\+Object\+::$\sim$\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameObject_a45171beb4d4ac8158a754fe41e735129}\label{classGameObject_a45171beb4d4ac8158a754fe41e735129}} 
+\index{GameObject@{GameObject}!Draw@{Draw}}
+\index{Draw@{Draw}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily virtual void Game\+Object\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to be overriden in child classes. 
+
+
+
+Implemented in \mbox{\hyperlink{classUI_1_1ImageDisplay_a8c7b39664d041bc0af383a5569e279c8}{UI\+::\+Image\+Display}}, \mbox{\hyperlink{classUI_1_1Label_ab01706aea1215dd3d233e5ba990dcdd5}{UI\+::\+Label}}, \mbox{\hyperlink{classUI_1_1Panel_acdcd0bca2811a368e5b08369fad34032}{UI\+::\+Panel}}, \mbox{\hyperlink{classUI_1_1Button_aebf96fb202c253c455d5416d4c9b5f6b}{UI\+::\+Button}}, and \mbox{\hyperlink{classUIElement_a195f4b75ce357c0810037cdba9e8b454}{UIElement}}.
+
+\mbox{\Hypertarget{classGameObject_aca765518ddce3cbd1b83939a0e36ef70}\label{classGameObject_aca765518ddce3cbd1b83939a0e36ef70}} 
+\index{GameObject@{GameObject}!GetTransform@{GetTransform}}
+\index{GetTransform@{GetTransform}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{GetTransform()}{GetTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTransform2D}{Transform2D}} \& Game\+Object\+::\+Get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get a reference to the object\textquotesingle{}s {\ttfamily transform} data. 
+
+\begin{DoxyReturn}{Returns}
+A {\bfseries{non-\/constant}} reference to the object\textquotesingle{}s {\ttfamily transform} data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameObject_a1b766775e2a696f276c65f41471f0c3d}\label{classGameObject_a1b766775e2a696f276c65f41471f0c3d}} 
+\index{GameObject@{GameObject}!GetTransform@{GetTransform}}
+\index{GetTransform@{GetTransform}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{GetTransform()}{GetTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structTransform2D}{Transform2D}} \& Game\+Object\+::\+Get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get a {\bfseries{constant}} reference to the object\textquotesingle{}s {\ttfamily transform} data. 
+
+\begin{DoxyReturn}{Returns}
+A {\bfseries{constant}} reference to the object\textquotesingle{}s {\ttfamily transform} data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameObject_a7f5c1336131d246a1e4ec9047996cab8}\label{classGameObject_a7f5c1336131d246a1e4ec9047996cab8}} 
+\index{GameObject@{GameObject}!Update@{Update}}
+\index{Update@{Update}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Game\+Object\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to be overriden in child classes. 
+
+
+
+Implemented in \mbox{\hyperlink{classUIElement_ae7a76be901cacb3b87ec1637c5e22a6e}{UIElement}}, \mbox{\hyperlink{classUI_1_1Label_a97cfeef5bfa2b5efd001f6342b18b808}{UI\+::\+Label}}, \mbox{\hyperlink{classUI_1_1VariableDisplay_ad3fdb4bea2825dae65af40d29e4ce1b7}{UI\+::\+Variable\+Display$<$ T $>$}}, \mbox{\hyperlink{classUI_1_1ImageDisplay_a1ce36a25433f94421e26c21545b575fe}{UI\+::\+Image\+Display}}, \mbox{\hyperlink{classUI_1_1Panel_a1151e5f7ce7a18ca1d3d1c3ebb4e3fbd}{UI\+::\+Panel}}, and \mbox{\hyperlink{classUI_1_1Button_a25bb759f840f630f901d349b9efbcd28}{UI\+::\+Button}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGameObject_accfa9d004189a8b17bb18fb0bcd7b1a3}\label{classGameObject_accfa9d004189a8b17bb18fb0bcd7b1a3}} 
+\index{GameObject@{GameObject}!transform@{transform}}
+\index{transform@{transform}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTransform2D}{Transform2D}} Game\+Object\+::transform\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{gameObject_8hxx}{game\+Object.\+hxx}}\item 
+src/\mbox{\hyperlink{gameObject_8cpp}{game\+Object.\+cpp}}\end{DoxyCompactItemize}

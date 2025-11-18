@@ -4,9 +4,37 @@
 #include <vector>
 #include "globals.hxx"
 #include <map>
-#include "transform.hxx"
 #include <functional>
 #include "gameObject.hxx"
+
+
+/**
+ * @file ui.hxx
+ * @brief User Interface (UI) Element classes for managing and rendering UI components in a game engine.
+ * 
+ * This file provides a set of classes and structures for creating, managing, and rendering various UI components such as buttons, labels,
+ * panels, and images. These components are derived from the `UIElement` class and are managed within containers for efficient rendering and interaction.
+ * The UI elements can be displayed, updated, and manipulated through a flexible system that supports drawing order, enabling/disabling, and visibility toggling.
+ * 
+ * ## Classes:
+ * - `UIElement`: A base class for all UI elements. Handles the common properties and functionality for UI components such as draw order, visibility, and enabling/disabling update logic.
+ * - `UIContainer`: A container for managing and rendering multiple `UIElement` objects. It is responsible for the centralized management of UI elements, including updating and drawing all contained elements.
+ * 
+ * ## UI Components in the `UI` Namespace:
+ * - `Button`: A clickable button that can be pressed and released.
+ * - `Panel`: A rectangular UI element, useful for creating backgrounds or containers for other UI elements.
+ * - `Label`: Displays text, supporting alignment and font size customization.
+ * - `ImageDisplay`: Displays an image/texture at a specified position.
+ * - `VariableDisplay`: A template class that displays the value of a variable, updating automatically when the variable changes.
+ * 
+ * ## Functionality:
+ * - **UIElement Class**: Provides methods for enabling, disabling, and controlling the display and update logic of UI components. It also manages the drawing order for rendering.
+ * - **UIContainer Class**: Manages multiple `UIElement` instances. It allows adding/removing elements, updating their states, and rendering them in a specific order.
+ * - **Interaction**: Each `UIElement` has mechanisms for handling user interaction such as hovering, pressing, and releasing buttons, and for drawing different types of UI elements like text and images.
+ * 
+ * The system is designed to be flexible and extendable, allowing new UI elements to be added easily by inheriting from the `UIElement` class.
+ */
+
 
 /**
  * @brief ## UI Element class
@@ -144,7 +172,7 @@ public:
     int  GetDrawOrder() const;
     /**
      * @brief Change this `UIContaier` object's `draw_order` to @p _order.
-     * @param _order New `draw_order` to be set.
+     * @param _order An integer determining the new order.
      * @note If 2 `UIElement` objects have different draw orders, the one with the highest order will be drawn above.
      * @note ` @p _order ` Must be in the [-100, 100] range. If it is outside it will be clamped.
      */

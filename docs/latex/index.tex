@@ -1,0 +1,120 @@
+\hypertarget{index_autotoc_md5}{}\doxysection{RGame}\label{index_autotoc_md5}
+{\bfseries{RGame}} is an abstraction layer built on top of the \href{https://raylib.com}{\texttt{ raylib}} library to simplify and standardize video game programming. It provides a collection of utilities, classes, structs, and templates that streamline the development process, making it easier to create games and interactive applications.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md7}{}\doxysubsection{Table of Contents}\label{index_autotoc_md7}
+
+\begin{DoxyItemize}
+\item \href{\#dependencies}{\texttt{ Dependencies}}
+\item \href{\#overview}{\texttt{ Overview}}
+\item \href{\#features}{\texttt{ Features}}
+\item \href{\#installation}{\texttt{ Installation}}
+\item \href{\#ui-system}{\texttt{ UI System}}
+\item \href{\#contributing}{\texttt{ Contributing}}
+\item \href{\#license}{\texttt{ License}}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md9}{}\doxysubsection{Dependencies}\label{index_autotoc_md9}
+
+\begin{DoxyItemize}
+\item \href{https://raylib.com}{\texttt{ raylib}}\+: A simple and easy-\/to-\/use game programming library, used as the foundation of RGame.
+\end{DoxyItemize}
+
+RGame is designed to work with {\bfseries{raylib}} version 5.\+5 or newer. If you don\textquotesingle{}t have it installed, follow the instructions on \href{https://raylib.com}{\texttt{ raylib\textquotesingle{}s website}} to set it up.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md11}{}\doxysubsection{Overview}\label{index_autotoc_md11}
+RGame aims to simplify the game development process by providing\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{namespaceUI}{UI}} Elements}}\+: A range of \mbox{\hyperlink{namespaceUI}{UI}} components (e.\+g., Buttons, Panels, Labels) for building interactive user interfaces.
+\item {\bfseries{\mbox{\hyperlink{classGameObject}{Game\+Object}} System}}\+: A flexible, component-\/based architecture for managing in-\/game entities.
+\item {\bfseries{\mbox{\hyperlink{classScene}{Scene}} Management}}\+: Tools for organizing and managing scenes, transitions, and state updates.
+\end{DoxyItemize}
+
+By abstracting common patterns and structures, RGame allows developers to focus more on gameplay and less on boilerplate code.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md13}{}\doxysubsection{Features}\label{index_autotoc_md13}
+
+\begin{DoxyItemize}
+\item {\bfseries{Cross-\/\+Platform}}\+: Works on Windows, mac\+OS, Linux, and other platforms supported by raylib. Mobile platforms are currently unsuported.
+\item {\bfseries{\mbox{\hyperlink{namespaceUI}{UI}} System}}\+: Easily create buttons, labels, and panels with customizable styles.
+\item {\bfseries{Flexible \mbox{\hyperlink{classScene}{Scene}} Management}}\+: Organize game objects into scenes and easily switch between them.
+\item {\bfseries{Open Source}}\+: RGame is open-\/source and contributions are welcome.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md15}{}\doxysubsection{Installation}\label{index_autotoc_md15}
+To get started with RGame, follow these steps\+:\hypertarget{index_autotoc_md16}{}\doxysubsubsection{1. Clone the Repository}\label{index_autotoc_md16}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://github.com/leodct/rgame.git}
+\DoxyCodeLine{cd rgame}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md17}{}\doxysubsubsection{2. Install Dependencies}\label{index_autotoc_md17}
+rgame relies on \href{https://raylib.com}{\texttt{ raylib}}, which must be installed on your system.
+
+
+\begin{DoxyItemize}
+\item On {\bfseries{Windows}}\+: Follow the raylib installation instructions on their \href{https://github.com/raysan5/raylib}{\texttt{ Git\+Hub page}} or \href{https://raylib.com}{\texttt{ raylib website}}.
+\item On {\bfseries{mac\+OS}}\+: You can use {\ttfamily brew} to install raylib\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{brew install raylib}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item On {\bfseries{Linux}} (Ubuntu)\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt-\/get install libraylib-\/dev}
+
+\end{DoxyCode}
+
+
+Once raylib is installed, you\textquotesingle{}re ready to start building with RGame!
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md19}{}\doxysubsection{UI System}\label{index_autotoc_md19}
+The \mbox{\hyperlink{namespaceUI}{UI}} system includes a range of pre-\/built components to help you create user interfaces easily\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{classUIElement}{UIElement}}}}\+: Base class for all \mbox{\hyperlink{namespaceUI}{UI}} elements.
+\item {\bfseries{Button}}\+: Interactive button component that handles mouse input.
+\item {\bfseries{Label}}\+: Text element that can be positioned and styled.
+\item {\bfseries{Panel}}\+: A container that can hold other \mbox{\hyperlink{namespaceUI}{UI}} elements.
+\item {\bfseries{Image\+Display}}\+: Displays an image as a \mbox{\hyperlink{namespaceUI}{UI}} element.
+\item {\bfseries{Variable\+Display}}\+: A special label that can display a variable\textquotesingle{}s value and update it in real-\/time.
+\end{DoxyItemize}\hypertarget{index_autotoc_md20}{}\doxysubsection{Contributing}\label{index_autotoc_md20}
+We welcome contributions to RGame! If you want to help improve this project, please follow these steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Fork the repository.
+\item Create a new branch for your feature or bugfix ({\ttfamily git checkout -\/b feature-\/name}).
+\item Commit your changes (`git commit -\/am \textquotesingle{}Add new feature'{\ttfamily ).}
+\item {\ttfamily Push to the branch (}git push origin feature-\/name\`{}).
+\item Open a Pull Request with a description of your changes.
+\end{DoxyEnumerate}
+
+Before submitting a PR, make sure your code passes the tests and follows the project\textquotesingle{}s coding conventions.\hypertarget{index_autotoc_md21}{}\doxysubsubsection{Reporting Issues}\label{index_autotoc_md21}
+If you encounter any bugs or have feature requests, please open an issue in the \href{https://github.com/yourusername/RGame/issues}{\texttt{ Git\+Hub repository}}.\hypertarget{index_autotoc_md22}{}\doxysubsection{License}\label{index_autotoc_md22}
+RGame is open-\/source software released under the \mbox{[}MIT License\mbox{]}(LICENSE).\hypertarget{index_autotoc_md23}{}\doxysubsection{Acknowledgements}\label{index_autotoc_md23}
+
+\begin{DoxyItemize}
+\item {\bfseries{Raylib}}\+: This project uses \href{https://github.com/raysan5/raylib}{\texttt{ Raylib}}, an excellent and easy-\/to-\/use game development library, as the foundation for graphics and input handling.
+\item {\bfseries{Contributors}}\+: Special thanks to all the contributors who have helped improve RGame.
+\item {\bfseries{Community}}\+: Thanks to the developers and users who provide valuable feedback and suggestions! 
+\end{DoxyItemize}

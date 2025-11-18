@@ -24,7 +24,7 @@ RAYLIB_FLAGS_LINUX := $(shell pkg-config --libs --cflags raylib)
 RAYLIB_FLAGS_WIN := -L$(LIB_DIR_WIN)/bin -lraylib -lopengl32 -lgdi32 -lwinmm
 
 # Project name
-PROJECT_NAME := "Shadow\ Protocol"
+PROJECT_NAME := "my\ rgame\ project"
 
 # Output executable names
 TARGET_LINUX := $(BIN_DIR)/$(PROJECT_NAME)_exe

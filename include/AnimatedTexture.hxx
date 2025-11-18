@@ -2,8 +2,29 @@
 #define ANIMATED_TEXTURE_H
 
 #include "globals.hxx"
-#include "transform.hxx"
 #include <chrono>
+
+
+/**
+ * @file AnimatedTexture.hxx
+ * @brief This file contains the declaration of the AnimatedTexture class.
+ * @details 
+ * This file defines the `AnimatedTexture` class, which is used to manage and control an animation made up of multiple textures (frames). 
+ * The class provides functionality for loading a sequence of frames, playing, pausing, stopping, and updating the animation based on time. 
+ * Additionally, it allows drawing the animated texture on screen with specified transformations.
+ *
+ * The animation system is controlled through several public methods, including:
+ * - `Play()`, `Pause()`, `Stop()`, `Resume()` to control the animation playback.
+ * - `Update()` to progress the animation based on elapsed time.
+ * - `Draw()` to render the current frame of the animation to the screen.
+ * 
+ * Key features include:
+ * - Frame-based animation with adjustable frame rate.
+ * - Support for looping and pausing the animation.
+ *
+ * @note This class relies on a naming convention for texture files (e.g., "texture_name_0.png", "texture_name_1.png", etc.) to load the sequence of frames.
+ */
+
 
 /** 
  * @brief ## Animated texture class.

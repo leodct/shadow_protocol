@@ -1,0 +1,110 @@
+\hypertarget{classUI_1_1VariableDisplay}{}\doxysection{UI\+::Variable\+Display$<$ T $>$ Class Template Reference}
+\label{classUI_1_1VariableDisplay}\index{UI::VariableDisplay$<$ T $>$@{UI::VariableDisplay$<$ T $>$}}
+
+
+\#\# Variable Display class  
+
+
+
+
+{\ttfamily \#include $<$UI.\+hpp$>$}
+
+
+
+Inheritance diagram for UI\+::Variable\+Display$<$ T $>$\+:
+% FIG 0
+
+
+Collaboration diagram for UI\+::Variable\+Display$<$ T $>$\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUI_1_1VariableDisplay_ac4ececcd2acfd5f7e9c3cd2b19d259f7}{Variable\+Display}} (const T $\ast$\+\_\+variable, \mbox{\hyperlink{structTransform2D}{Transform2D}} \+\_\+transform=\{\}, unsigned int \+\_\+text\+\_\+size=1, Color \+\_\+text\+\_\+col=BLACK, \mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686}{ALIGNMENT}} \+\_\+alignment=\mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686a684d325a7303f52e64011467ff5c5758}{ALIGNMENT\+::\+LEFT}})
+\begin{DoxyCompactList}\small\item\em Create a new {\ttfamily \mbox{\hyperlink{classUI_1_1VariableDisplay}{Variable\+Display}}} object with default parameters. \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{classUI_1_1VariableDisplay_a4fe60759fd0065ee26e0b7c9fb64ffff}{Get\+Variable}} () const
+\begin{DoxyCompactList}\small\item\em Get a reference to the stored {\ttfamily variable}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUI_1_1VariableDisplay_ad3fdb4bea2825dae65af40d29e4ce1b7}{Update}} () override
+\begin{DoxyCompactList}\small\item\em Update the display to have the most recent value stored in {\ttfamily variable}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class UI\+::\+Variable\+Display$<$ T $>$}
+
+\#\# Variable Display class 
+
+Allows for having a label with a variable value in it. The value will automatically update when the {\ttfamily \mbox{\hyperlink{classUI_1_1VariableDisplay_ad3fdb4bea2825dae65af40d29e4ce1b7}{Update()}}} method is called. \begin{DoxyNote}{Note}
+This class stores a constant pointer to the variable it displays. Ownership of the object is not passed to this class. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+This template class is compatible with all data types compatible with the {\ttfamily std\+::to\+\_\+string()} method of the STL. 
+\end{DoxyWarning}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUI_1_1VariableDisplay_ac4ececcd2acfd5f7e9c3cd2b19d259f7}\label{classUI_1_1VariableDisplay_ac4ececcd2acfd5f7e9c3cd2b19d259f7}} 
+\index{UI::VariableDisplay$<$ T $>$@{UI::VariableDisplay$<$ T $>$}!VariableDisplay@{VariableDisplay}}
+\index{VariableDisplay@{VariableDisplay}!UI::VariableDisplay$<$ T $>$@{UI::VariableDisplay$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{VariableDisplay()}{VariableDisplay()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classUI_1_1VariableDisplay}{UI\+::\+Variable\+Display}}$<$ T $>$\+::\mbox{\hyperlink{classUI_1_1VariableDisplay}{Variable\+Display}} (\begin{DoxyParamCaption}\item[{const T $\ast$}]{\+\_\+variable,  }\item[{\mbox{\hyperlink{structTransform2D}{Transform2D}}}]{\+\_\+transform = {\ttfamily \{\}},  }\item[{unsigned int}]{\+\_\+text\+\_\+size = {\ttfamily 1},  }\item[{Color}]{\+\_\+text\+\_\+col = {\ttfamily BLACK},  }\item[{\mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686}{ALIGNMENT}}}]{\+\_\+alignment = {\ttfamily \mbox{\hyperlink{classUI_1_1Label_ad94920378b821e11ae275459cc498686a684d325a7303f52e64011467ff5c5758}{ALIGNMENT\+::\+LEFT}}} }\end{DoxyParamCaption})}
+
+
+
+Create a new {\ttfamily \mbox{\hyperlink{classUI_1_1VariableDisplay}{Variable\+Display}}} object with default parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+variable} & Constant pointer to the variable to be displayed. \\
+\hline
+{\em \+\_\+transform} & New object\textquotesingle{}s {\ttfamily transform} value. Determines position, rotation and scale. \\
+\hline
+{\em \+\_\+text\+\_\+size} & Font size. \\
+\hline
+{\em \+\_\+text\+\_\+col} & Colour with which to draw the object. \\
+\hline
+{\em \+\_\+alignment} & Whether {\ttfamily @p transform.\+position} is in the {\bfseries{middle}} of the text, the {\bfseries{left}} or the {\bfseries{right}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+{\ttfamily @p \+\_\+variable} must {\bfseries{always}} have a defined value. Passing an undefined or null pointer {\bfseries{will}} cause issues. 
+\end{DoxyWarning}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUI_1_1VariableDisplay_a4fe60759fd0065ee26e0b7c9fb64ffff}\label{classUI_1_1VariableDisplay_a4fe60759fd0065ee26e0b7c9fb64ffff}} 
+\index{UI::VariableDisplay$<$ T $>$@{UI::VariableDisplay$<$ T $>$}!GetVariable@{GetVariable}}
+\index{GetVariable@{GetVariable}!UI::VariableDisplay$<$ T $>$@{UI::VariableDisplay$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetVariable()}{GetVariable()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T \& \mbox{\hyperlink{classUI_1_1VariableDisplay}{UI\+::\+Variable\+Display}}$<$ T $>$\+::Get\+Variable\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a reference to the stored {\ttfamily variable}. 
+
+\begin{DoxyReturn}{Returns}
+A {\bfseries{constant}} reference to the stored {\ttfamily variable}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUI_1_1VariableDisplay_ad3fdb4bea2825dae65af40d29e4ce1b7}\label{classUI_1_1VariableDisplay_ad3fdb4bea2825dae65af40d29e4ce1b7}} 
+\index{UI::VariableDisplay$<$ T $>$@{UI::VariableDisplay$<$ T $>$}!Update@{Update}}
+\index{Update@{Update}!UI::VariableDisplay$<$ T $>$@{UI::VariableDisplay$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classUI_1_1VariableDisplay}{UI\+::\+Variable\+Display}}$<$ T $>$\+::Update\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update the display to have the most recent value stored in {\ttfamily variable}. 
+
+
+
+Implements \mbox{\hyperlink{classUI_1_1Label_a97cfeef5bfa2b5efd001f6342b18b808}{UI\+::\+Label}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{UI_8hpp}{UI.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,151 @@
+\hypertarget{classUI_1_1Button}{}\doxysection{UI\+::Button Class Reference}
+\label{classUI_1_1Button}\index{UI::Button@{UI::Button}}
+
+
+\#\# Basic button class.  
+
+
+
+
+{\ttfamily \#include $<$UI.\+hpp$>$}
+
+
+
+Inheritance diagram for UI\+::Button\+:
+% FIG 0
+
+
+Collaboration diagram for UI\+::Button\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUI_1_1Button_a1f4a0b48cb87072b531491e60805ef65}{Button}} (Texture2D \+\_\+texture, \mbox{\hyperlink{structTransform2D}{Transform2D}} \+\_\+transform)
+\begin{DoxyCompactList}\small\item\em Create a new {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object with a texture given by {\ttfamily @p \+\_\+texture}, with a transform given by {\ttfamily @p \+\_\+transform} and with a default callback. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUI_1_1Button_a295d822d9c16d3e42d53ce2773bf17dd}{Is\+Pressed}} () const
+\begin{DoxyCompactList}\small\item\em Check whether the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} is being pressed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUI_1_1Button_a20d2713afc38c5a1a940139adc8f9029}{Is\+Released}} () const
+\begin{DoxyCompactList}\small\item\em Check whether the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object is no longer being pressed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUI_1_1Button_accb1a2873dbf3a1f8b73d4c8ed1f7481}{Is\+Hover}} () const
+\begin{DoxyCompactList}\small\item\em Check whether the mouse cursor is hovering over the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUI_1_1Button_a1ac994b6e5555f18b556301e5785c2d7}{Define\+On\+Press\+Callback}} (std\+::function$<$ void()$>$ callback)
+\begin{DoxyCompactList}\small\item\em Define the function to be called when the button is released. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUI_1_1Button_a25bb759f840f630f901d349b9efbcd28}{Update}} () override
+\begin{DoxyCompactList}\small\item\em Run the updating logic on the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object. Calculates {\ttfamily hover} and {\ttfamily press}, and determine if the {\ttfamily callback\+Function} should be called. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUI_1_1Button_aebf96fb202c253c455d5416d4c9b5f6b}{Draw}} () const override
+\begin{DoxyCompactList}\small\item\em Draw the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\#\# Basic button class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUI_1_1Button_a1f4a0b48cb87072b531491e60805ef65}\label{classUI_1_1Button_a1f4a0b48cb87072b531491e60805ef65}} 
+\index{UI::Button@{UI::Button}!Button@{Button}}
+\index{Button@{Button}!UI::Button@{UI::Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}}
+{\footnotesize\ttfamily Button\+::\+Button (\begin{DoxyParamCaption}\item[{Texture2D}]{\+\_\+texture,  }\item[{\mbox{\hyperlink{structTransform2D}{Transform2D}}}]{\+\_\+transform }\end{DoxyParamCaption})}
+
+
+
+Create a new {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object with a texture given by {\ttfamily @p \+\_\+texture}, with a transform given by {\ttfamily @p \+\_\+transform} and with a default callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+texture} & Texture that defines how the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object should be drawn. \\
+\hline
+{\em \+\_\+transform} & Transform that defines the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUI_1_1Button_a1ac994b6e5555f18b556301e5785c2d7}\label{classUI_1_1Button_a1ac994b6e5555f18b556301e5785c2d7}} 
+\index{UI::Button@{UI::Button}!DefineOnPressCallback@{DefineOnPressCallback}}
+\index{DefineOnPressCallback@{DefineOnPressCallback}!UI::Button@{UI::Button}}
+\doxysubsubsection{\texorpdfstring{DefineOnPressCallback()}{DefineOnPressCallback()}}
+{\footnotesize\ttfamily void Button\+::\+Define\+On\+Press\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{callback }\end{DoxyParamCaption})}
+
+
+
+Define the function to be called when the button is released. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Function to be called. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUI_1_1Button_aebf96fb202c253c455d5416d4c9b5f6b}\label{classUI_1_1Button_aebf96fb202c253c455d5416d4c9b5f6b}} 
+\index{UI::Button@{UI::Button}!Draw@{Draw}}
+\index{Draw@{Draw}!UI::Button@{UI::Button}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Button\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draw the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object. 
+
+
+
+Implements \mbox{\hyperlink{classUIElement_a195f4b75ce357c0810037cdba9e8b454}{UIElement}}.
+
+\mbox{\Hypertarget{classUI_1_1Button_accb1a2873dbf3a1f8b73d4c8ed1f7481}\label{classUI_1_1Button_accb1a2873dbf3a1f8b73d4c8ed1f7481}} 
+\index{UI::Button@{UI::Button}!IsHover@{IsHover}}
+\index{IsHover@{IsHover}!UI::Button@{UI::Button}}
+\doxysubsubsection{\texorpdfstring{IsHover()}{IsHover()}}
+{\footnotesize\ttfamily bool Button\+::\+Is\+Hover (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check whether the mouse cursor is hovering over the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object. 
+
+\begin{DoxyReturn}{Returns}
+{\bfseries{True}} If the position of the mouse cursor lies within the bounds of the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object defined by {\ttfamily hitbox}. {\bfseries{False}} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUI_1_1Button_a295d822d9c16d3e42d53ce2773bf17dd}\label{classUI_1_1Button_a295d822d9c16d3e42d53ce2773bf17dd}} 
+\index{UI::Button@{UI::Button}!IsPressed@{IsPressed}}
+\index{IsPressed@{IsPressed}!UI::Button@{UI::Button}}
+\doxysubsubsection{\texorpdfstring{IsPressed()}{IsPressed()}}
+{\footnotesize\ttfamily bool Button\+::\+Is\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check whether the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} is being pressed. 
+
+\begin{DoxyReturn}{Returns}
+{\bfseries{True}} if {\ttfamily MOUSE\+\_\+\+BUTTON\+\_\+\+LEFT} is being pressed while {\bfseries{{\ttfamily \mbox{\hyperlink{classUI_1_1Button_accb1a2873dbf3a1f8b73d4c8ed1f7481}{Is\+Hover()}}}}} is {\bfseries{true}}. {\bfseries{False}} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUI_1_1Button_a20d2713afc38c5a1a940139adc8f9029}\label{classUI_1_1Button_a20d2713afc38c5a1a940139adc8f9029}} 
+\index{UI::Button@{UI::Button}!IsReleased@{IsReleased}}
+\index{IsReleased@{IsReleased}!UI::Button@{UI::Button}}
+\doxysubsubsection{\texorpdfstring{IsReleased()}{IsReleased()}}
+{\footnotesize\ttfamily bool Button\+::\+Is\+Released (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check whether the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object is no longer being pressed. 
+
+\begin{DoxyReturn}{Returns}
+{\bfseries{True}} if the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object is not being pressed in the current update cycle but was in the previous one. {\bfseries{False}} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUI_1_1Button_a25bb759f840f630f901d349b9efbcd28}\label{classUI_1_1Button_a25bb759f840f630f901d349b9efbcd28}} 
+\index{UI::Button@{UI::Button}!Update@{Update}}
+\index{Update@{Update}!UI::Button@{UI::Button}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Button\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Run the updating logic on the {\ttfamily \mbox{\hyperlink{classUI_1_1Button}{Button}}} object. Calculates {\ttfamily hover} and {\ttfamily press}, and determine if the {\ttfamily callback\+Function} should be called. 
+
+
+
+Implements \mbox{\hyperlink{classUIElement_ae7a76be901cacb3b87ec1637c5e22a6e}{UIElement}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{UI_8hpp}{UI.\+hpp}}\item 
+src/\mbox{\hyperlink{UI_8cpp}{UI.\+cpp}}\end{DoxyCompactItemize}

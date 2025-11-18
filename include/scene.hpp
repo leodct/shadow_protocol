@@ -6,6 +6,15 @@
 #include "gameObject.hxx"
 
 /**
+ * @file scene.hxx
+ * @brief This file contains the `Scene` and `SceneManager` classes.
+ * @details
+ * This file defines the `Scene` class, which acts as a container for `GameObject` and `UIContainer` objects that should be displayed in the same location.
+ * It also defines the `SceneManager` class, which is responsible for managing and switching between scenes.
+ */
+
+ 
+/**
  * @brief ## Scene class
  * @brief A container for all `GameObject` and `UIContainer` objects that should be displayed in the same place.
  * @note Once given a pointer to a `GameObject` or `UIContainer`, this class becomes owner of said object and will liberate their memory on it's own.

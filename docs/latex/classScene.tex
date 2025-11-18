@@ -1,0 +1,252 @@
+\hypertarget{classScene}{}\doxysection{Scene Class Reference}
+\label{classScene}\index{Scene@{Scene}}
+
+
+\#\# \mbox{\hyperlink{classScene}{Scene}} class  
+
+
+
+
+{\ttfamily \#include $<$scene.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScene_ad10176d75a9cc0da56626f682d083507}{Scene}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Creates a completely empty scene. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classScene_a3b8cec2e32546713915f8c6303c951f1}{$\sim$\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Correctly cleans up all memory related to the {\ttfamily \mbox{\hyperlink{classScene}{Scene}}} object\textquotesingle{}s elements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a4a3aaa86688afd88b774b65265463c57}{Add\+Ui}} (const std\+::string \&id, \mbox{\hyperlink{classUIContainer}{UIContainer}} $\ast$\+\_\+ui)
+\begin{DoxyCompactList}\small\item\em Add a new {\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}}} to the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_ab1815b341afb6052a244494ddbfbe2ab}{Remove\+UI}} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em Remove a {\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}}} element given it\textquotesingle{}s identifier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_aa32b4af7b49a0bd6014ac3f2144be516}{Add\+Object}} (const std\+::string \&id, \mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$\+\_\+object)
+\begin{DoxyCompactList}\small\item\em Add a new {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} to the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a076ac45a4604efdfad494dc61df02e4d}{Remove\+Object}} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em Remove a {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} element given it\textquotesingle{}s identifier. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} \& \mbox{\hyperlink{classScene_a526740e23a360fe70eda01a3e3b9c091}{Get\+Object}} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em Get a reference to the {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} with identifier {\ttfamily id}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classGameObject}{Game\+Object}} \& \mbox{\hyperlink{classScene_aa37c2eb497ba721bf3daa248a59617c5}{Get\+Object}} (const std\+::string \&id) const
+\begin{DoxyCompactList}\small\item\em Get a {\bfseries{constant}} reference to the {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} with identifier {\ttfamily id}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUIContainer}{UIContainer}} \& \mbox{\hyperlink{classScene_ad878a581d0709338a6c1e08ec04a3e78}{Get\+UI}} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em Get a reference to the {\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}}} with identifier {\ttfamily id}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classUIContainer}{UIContainer}} \& \mbox{\hyperlink{classScene_aeae29f26483187c446b4f6d48b6f6169}{Get\+UI}} (const std\+::string \&id) const
+\begin{DoxyCompactList}\small\item\em Get a {\bfseries{constant}} reference to the {\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}}} with identifier {\ttfamily id}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a15be37ccff4c047386119b3a988063c5}{Draw}} () const
+\begin{DoxyCompactList}\small\item\em Draw all of the {\ttfamily \mbox{\hyperlink{classScene}{Scene}}} object\textquotesingle{}s elements following their {\ttfamily draw\+\_\+order}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a71a71b4f7752b853ff8032b0941a9d8d}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates all of the {\ttfamily \mbox{\hyperlink{classScene}{Scene}}} object\textquotesingle{}s elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\#\# \mbox{\hyperlink{classScene}{Scene}} class 
+
+A container for all {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} and {\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}}} objects that should be displayed in the same place. \begin{DoxyNote}{Note}
+Once given a pointer to a {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} or {\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}}}, this class becomes owner of said object and will liberate their memory on it\textquotesingle{}s own. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScene_ad10176d75a9cc0da56626f682d083507}\label{classScene_ad10176d75a9cc0da56626f682d083507}} 
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. Creates a completely empty scene. 
+
+\mbox{\Hypertarget{classScene_a3b8cec2e32546713915f8c6303c951f1}\label{classScene_a3b8cec2e32546713915f8c6303c951f1}} 
+\index{Scene@{Scene}!````~Scene@{$\sim$Scene}}
+\index{````~Scene@{$\sim$Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{$\sim$Scene()}{~Scene()}}
+{\footnotesize\ttfamily Scene\+::$\sim$\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. Correctly cleans up all memory related to the {\ttfamily \mbox{\hyperlink{classScene}{Scene}}} object\textquotesingle{}s elements. 
+
+\begin{DoxyWarning}{Warning}
+The {\ttfamily \mbox{\hyperlink{classScene}{Scene}}} object is owner of all pointers given to it to facilitate centralized memory cleanups. This means the user is not required to call the {\bfseries{delete}} function on all of the {\ttfamily \mbox{\hyperlink{classScene}{Scene}}} object\textquotesingle{}s elements as the parent object will take care of it upon it\textquotesingle{}s destruction. 
+\end{DoxyWarning}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScene_aa32b4af7b49a0bd6014ac3f2144be516}\label{classScene_aa32b4af7b49a0bd6014ac3f2144be516}} 
+\index{Scene@{Scene}!AddObject@{AddObject}}
+\index{AddObject@{AddObject}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{AddObject()}{AddObject()}}
+{\footnotesize\ttfamily void Scene\+::\+Add\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$}]{\+\_\+object }\end{DoxyParamCaption})}
+
+
+
+Add a new {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} to the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Text associated with the inserted {\ttfamily \+\_\+object}. This std\+::string will be the identifier of {\ttfamily \+\_\+object}. \\
+\hline
+{\em \+\_\+ui} & The \mbox{\hyperlink{classGameObject}{Game\+Object}} to add to the {\ttfamily \mbox{\hyperlink{classScene}{Scene}}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Ownership of {\ttfamily \+\_\+object} will be given to the {\ttfamily \mbox{\hyperlink{classScene}{Scene}}} object for more centralized memory management. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classScene_a4a3aaa86688afd88b774b65265463c57}\label{classScene_a4a3aaa86688afd88b774b65265463c57}} 
+\index{Scene@{Scene}!AddUi@{AddUi}}
+\index{AddUi@{AddUi}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{AddUi()}{AddUi()}}
+{\footnotesize\ttfamily void Scene\+::\+Add\+Ui (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id,  }\item[{\mbox{\hyperlink{classUIContainer}{UIContainer}} $\ast$}]{\+\_\+ui }\end{DoxyParamCaption})}
+
+
+
+Add a new {\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}}} to the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Text associated with the inserted {\ttfamily \+\_\+ui}. This std\+::string will be the identifier of {\ttfamily \+\_\+ui}. \\
+\hline
+{\em \+\_\+ui} & The \mbox{\hyperlink{classUIContainer}{UIContainer}} to add to the {\ttfamily \mbox{\hyperlink{classScene}{Scene}}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Ownership of {\ttfamily \+\_\+ui} will be given to the {\ttfamily \mbox{\hyperlink{classScene}{Scene}}} object for more centralized memory management. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classScene_a15be37ccff4c047386119b3a988063c5}\label{classScene_a15be37ccff4c047386119b3a988063c5}} 
+\index{Scene@{Scene}!Draw@{Draw}}
+\index{Draw@{Draw}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Scene\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Draw all of the {\ttfamily \mbox{\hyperlink{classScene}{Scene}}} object\textquotesingle{}s elements following their {\ttfamily draw\+\_\+order}. 
+
+\begin{DoxyNote}{Note}
+All objects of type {\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}}} are {\bfseries{always}} drawn after all {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} objects. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classScene_a526740e23a360fe70eda01a3e3b9c091}\label{classScene_a526740e23a360fe70eda01a3e3b9c091}} 
+\index{Scene@{Scene}!GetObject@{GetObject}}
+\index{GetObject@{GetObject}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{GetObject()}{GetObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}} \& Scene\+::\+Get\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Get a reference to the {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} with identifier {\ttfamily id}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Desired object\textquotesingle{}s identifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\bfseries{non-\/constant}} reference to the {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} stored with the identifier {\ttfamily id}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_aa37c2eb497ba721bf3daa248a59617c5}\label{classScene_aa37c2eb497ba721bf3daa248a59617c5}} 
+\index{Scene@{Scene}!GetObject@{GetObject}}
+\index{GetObject@{GetObject}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{GetObject()}{GetObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classGameObject}{Game\+Object}} \& Scene\+::\+Get\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Get a {\bfseries{constant}} reference to the {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} with identifier {\ttfamily id}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Desired object\textquotesingle{}s identifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\bfseries{constant}} reference to the {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} stored with the identifier {\ttfamily id}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_ad878a581d0709338a6c1e08ec04a3e78}\label{classScene_ad878a581d0709338a6c1e08ec04a3e78}} 
+\index{Scene@{Scene}!GetUI@{GetUI}}
+\index{GetUI@{GetUI}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{GetUI()}{GetUI()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}} \& Scene\+::\+Get\+UI (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Get a reference to the {\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}}} with identifier {\ttfamily id}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Desired object\textquotesingle{}s identifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\bfseries{non-\/constant}} reference to the {\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}}} stored with the identifier {\ttfamily id}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_aeae29f26483187c446b4f6d48b6f6169}\label{classScene_aeae29f26483187c446b4f6d48b6f6169}} 
+\index{Scene@{Scene}!GetUI@{GetUI}}
+\index{GetUI@{GetUI}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{GetUI()}{GetUI()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classUIContainer}{UIContainer}} \& Scene\+::\+Get\+UI (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Get a {\bfseries{constant}} reference to the {\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}}} with identifier {\ttfamily id}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Desired object\textquotesingle{}s identifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\bfseries{constant}} reference to the {\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}}} stored with the identifier {\ttfamily id}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_a076ac45a4604efdfad494dc61df02e4d}\label{classScene_a076ac45a4604efdfad494dc61df02e4d}} 
+\index{Scene@{Scene}!RemoveObject@{RemoveObject}}
+\index{RemoveObject@{RemoveObject}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{RemoveObject()}{RemoveObject()}}
+{\footnotesize\ttfamily void Scene\+::\+Remove\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Remove a {\ttfamily \mbox{\hyperlink{classGameObject}{Game\+Object}}} element given it\textquotesingle{}s identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifier of the element to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This will also free the memory occupied by the object with identifier {\ttfamily id}! Plan accordingly! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classScene_ab1815b341afb6052a244494ddbfbe2ab}\label{classScene_ab1815b341afb6052a244494ddbfbe2ab}} 
+\index{Scene@{Scene}!RemoveUI@{RemoveUI}}
+\index{RemoveUI@{RemoveUI}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{RemoveUI()}{RemoveUI()}}
+{\footnotesize\ttfamily void Scene\+::\+Remove\+UI (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Remove a {\ttfamily \mbox{\hyperlink{classUIContainer}{UIContainer}}} element given it\textquotesingle{}s identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identifier of the element to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This will also free the memory occupied by the object with identifier {\ttfamily id}! Plan accordingly! 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classScene_a71a71b4f7752b853ff8032b0941a9d8d}\label{classScene_a71a71b4f7752b853ff8032b0941a9d8d}} 
+\index{Scene@{Scene}!Update@{Update}}
+\index{Update@{Update}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Scene\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates all of the {\ttfamily \mbox{\hyperlink{classScene}{Scene}}} object\textquotesingle{}s elements. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{scene_8hpp}{scene.\+hpp}}\item 
+src/\mbox{\hyperlink{scene_8cpp}{scene.\+cpp}}\end{DoxyCompactItemize}

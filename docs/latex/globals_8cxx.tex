@@ -1,0 +1,110 @@
+\hypertarget{globals_8cxx}{}\doxysection{src/globals.cxx File Reference}
+\label{globals_8cxx}\index{src/globals.cxx@{src/globals.cxx}}
+{\ttfamily \#include \char`\"{}globals.\+hxx\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scene.\+hpp\char`\"{}}\newline
+Include dependency graph for globals.\+cxx\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{globals_8cxx_a36b9efc3bb11ce09f04b6aec4e099dee}{Throw\+Not\+Found\+Exception}} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em Auxiliary function. It safely closes the program when it asks for a \mbox{\hyperlink{classScene}{Scene}} or \mbox{\hyperlink{classUIElement}{UIElement}} that is not present in their respective container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{globals_8cxx_a557fb9fba78bbcc06666aecf4bead4e3}{Default\+Callback}} ()
+\begin{DoxyCompactList}\small\item\em Default button callback. Prints a message on the console when a button without a defined callback is clicked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{globals_8cxx_ac300c96ce762678edbb5fc0532a2e471}{Init\+Button\+Shader}} ()
+\begin{DoxyCompactList}\small\item\em Auxiliary function that initializes the button outline shader. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{globals_8cxx_a393475ac0c594975344880fd82eff249}{Config\+Button\+Shader}} (bool outline, float thickness)
+\begin{DoxyCompactList}\small\item\em Auxiliary function used internally by the {\ttfamily Button} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Camera2D \mbox{\hyperlink{globals_8cxx_a2104321f3e01d1f85c8054cda5ad149c}{camera}} = \{\}
+\begin{DoxyCompactList}\small\item\em Main camera to be used for rendering. \end{DoxyCompactList}\item 
+Shader \mbox{\hyperlink{globals_8cxx_a691de76118190c3a590f02025a053161}{button\+\_\+shader}} = \{\}
+\begin{DoxyCompactList}\small\item\em This shader is used internally by the {\ttfamily Button} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{globals_8cxx_a393475ac0c594975344880fd82eff249}\label{globals_8cxx_a393475ac0c594975344880fd82eff249}} 
+\index{globals.cxx@{globals.cxx}!ConfigButtonShader@{ConfigButtonShader}}
+\index{ConfigButtonShader@{ConfigButtonShader}!globals.cxx@{globals.cxx}}
+\doxysubsubsection{\texorpdfstring{ConfigButtonShader()}{ConfigButtonShader()}}
+{\footnotesize\ttfamily void Config\+Button\+Shader (\begin{DoxyParamCaption}\item[{bool}]{outline,  }\item[{float}]{thickness = {\ttfamily \mbox{\hyperlink{globals_8hxx_a1fcc8a84828afa4f8e605144d1b7be9a}{BUTTON\+\_\+\+SHADER\+\_\+\+OUTLINE\+\_\+\+THICKNESS\+\_\+\+DEFAULT}}} }\end{DoxyParamCaption})}
+
+
+
+Auxiliary function used internally by the {\ttfamily Button} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em outline} & Whether to show the white outline or not. \\
+\hline
+{\em thickness} & Size of the outline. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{globals_8cxx_a557fb9fba78bbcc06666aecf4bead4e3}\label{globals_8cxx_a557fb9fba78bbcc06666aecf4bead4e3}} 
+\index{globals.cxx@{globals.cxx}!DefaultCallback@{DefaultCallback}}
+\index{DefaultCallback@{DefaultCallback}!globals.cxx@{globals.cxx}}
+\doxysubsubsection{\texorpdfstring{DefaultCallback()}{DefaultCallback()}}
+{\footnotesize\ttfamily void Default\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default button callback. Prints a message on the console when a button without a defined callback is clicked. 
+
+\mbox{\Hypertarget{globals_8cxx_ac300c96ce762678edbb5fc0532a2e471}\label{globals_8cxx_ac300c96ce762678edbb5fc0532a2e471}} 
+\index{globals.cxx@{globals.cxx}!InitButtonShader@{InitButtonShader}}
+\index{InitButtonShader@{InitButtonShader}!globals.cxx@{globals.cxx}}
+\doxysubsubsection{\texorpdfstring{InitButtonShader()}{InitButtonShader()}}
+{\footnotesize\ttfamily void Init\+Button\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Auxiliary function that initializes the button outline shader. 
+
+\begin{DoxyWarning}{Warning}
+This function {\bfseries{must}} be called after the window has been initialized. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{globals_8cxx_a36b9efc3bb11ce09f04b6aec4e099dee}\label{globals_8cxx_a36b9efc3bb11ce09f04b6aec4e099dee}} 
+\index{globals.cxx@{globals.cxx}!ThrowNotFoundException@{ThrowNotFoundException}}
+\index{ThrowNotFoundException@{ThrowNotFoundException}!globals.cxx@{globals.cxx}}
+\doxysubsubsection{\texorpdfstring{ThrowNotFoundException()}{ThrowNotFoundException()}}
+{\footnotesize\ttfamily void Throw\+Not\+Found\+Exception (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Auxiliary function. It safely closes the program when it asks for a \mbox{\hyperlink{classScene}{Scene}} or \mbox{\hyperlink{classUIElement}{UIElement}} that is not present in their respective container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The string identifier of the item that has not been found. This {\ttfamily id} is shown on screen to facilitate debugging. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{globals_8cxx_a691de76118190c3a590f02025a053161}\label{globals_8cxx_a691de76118190c3a590f02025a053161}} 
+\index{globals.cxx@{globals.cxx}!button\_shader@{button\_shader}}
+\index{button\_shader@{button\_shader}!globals.cxx@{globals.cxx}}
+\doxysubsubsection{\texorpdfstring{button\_shader}{button\_shader}}
+{\footnotesize\ttfamily Shader button\+\_\+shader = \{\}}
+
+
+
+This shader is used internally by the {\ttfamily Button} class. 
+
+
+\begin{DoxyItemize}
+\item If the button is {\bfseries{idle}}, then it\textquotesingle{}s texture will be drawn with nothing else.
+\item If the button is {\bfseries{being}} {\bfseries{hovered}}, it\textquotesingle{}s texture will appear with a slight white tint and a white outline.
+\item If the button is {\bfseries{being}} {\bfseries{pressed}}, it\textquotesingle{}s texture will appear with a dark tint and a white outline. 
+\end{DoxyItemize}\mbox{\Hypertarget{globals_8cxx_a2104321f3e01d1f85c8054cda5ad149c}\label{globals_8cxx_a2104321f3e01d1f85c8054cda5ad149c}} 
+\index{globals.cxx@{globals.cxx}!camera@{camera}}
+\index{camera@{camera}!globals.cxx@{globals.cxx}}
+\doxysubsubsection{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily Camera2D camera = \{\}}
+
+
+
+Main camera to be used for rendering. 
+

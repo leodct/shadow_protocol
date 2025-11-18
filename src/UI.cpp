@@ -1,5 +1,4 @@
 #include "UI.hpp"
-#include "callbacks.hpp"
 #include <iostream>
 
 using namespace UI;
@@ -225,23 +224,23 @@ void Button::Draw() const {
     Vector2 drawPos = {transform.position.x - (texture.width * transform.scale) / 2, transform.position.y - (texture.height * transform.scale) / 2};
 
     // Set all shader values before entering shader mode
-    ConfigOutlineShader(IsHover(), transform.scale * 0.75);
+    ConfigButtonShader(IsHover(), transform.scale * 0.75);
 
     Vector2 texSize = {(float)texture.width * transform.scale, (float)texture.height * transform.scale};
-    int texSizeLoc = GetShaderLocation(outline_shader, "texSize");
-    SetShaderValue(outline_shader, texSizeLoc, &texSize, SHADER_UNIFORM_VEC2);
+    int texSizeLoc = GetShaderLocation(button_shader, "texSize");
+    SetShaderValue(button_shader, texSizeLoc, &texSize, SHADER_UNIFORM_VEC2);
 
     // Color modulation
     float np = !IsPressed();
     Vector4 colorMod = {
-        np, np, np, gameSettings.highlight_strength
+        np, np, np, 1
     };
-    int colorModLoc = GetShaderLocation(outline_shader, "tintCol");
-    SetShaderValue(outline_shader, colorModLoc, &colorMod, SHADER_UNIFORM_VEC4);
+    int colorModLoc = GetShaderLocation(button_shader, "tintCol");
+    SetShaderValue(button_shader, colorModLoc, &colorMod, SHADER_UNIFORM_VEC4);
 
     // If hovered, use shader mode
     if (hover) {
-        BeginShaderMode(outline_shader);
+        BeginShaderMode(button_shader);
         DrawTextureEx(texture, drawPos, transform.rotation, transform.scale, WHITE);
         EndShaderMode();
     }
