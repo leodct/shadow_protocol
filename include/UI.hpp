@@ -337,10 +337,24 @@ namespace UI
          */
         void               SetAlignment(ALIGNMENT _alignment);
 
+        /**
+         * @brief Get the text colour.
+         * @return An 8 bit RGBA value with the colour of the `Label` object's text.
+         */
         Color              GetTextColor() const;
+        /**
+         * @brief Change the text colour.
+         * @param color The new colour to display.
+         */
         void               SetTextColor(Color color);
 
-        void Update() override;
+        /**
+         * @brief Overriden update method. Does nothing.
+         */
+        void Update() override = 0;
+        /**
+         * @brief Draw the `Label` object.
+         */
         void Draw() const override;
 
     };
@@ -348,34 +362,82 @@ namespace UI
     // ---------------------------
     // --- IMAGE DISPLAY CLASS ---
     // ---------------------------
+    /**
+     * @brief ## Image Display class
+     * @brief Allows for displaying an Image/Texture2D as a `UIElement`.
+     */
     class ImageDisplay : public UIElement {
     private:
-        Texture2D image;
-        Vector2   origin;
+        Texture2D image;  // Image to display.
+        Vector2   origin; // Point of origin. Set to {`image`.width / 2.0f, `image`.height / 2.0f} to have the image centered around `transform.position`.
+        Rectangle sr, dr; // Auxiliary rectangles for the `Draw()` method.
     public:
-        ImageDisplay(Texture2D texture, Transform2D _transform, Vector2 _origin);
+        /**
+         * @brief Create an `ImageDisplay` object with default parameters.
+         * @param texture Image to be displayed.
+         * @param _transform New object's transform. Determines position, scale and rotation.
+         * @param _origin Point of reference from which to draw the ` @p texture `.
+         * @note Set ` @p _origin ` to {`image`.width / 2.0f, `image`.height / 2.0f} to have the image centered around ` @p _transform.position `.
+         */
+        ImageDisplay(Texture2D texture, Transform2D _transform = {}, Vector2 _origin = {});
+        /**
+         * @brief Safely clean up texture data.
+         */
         ~ImageDisplay();
 
-        void Draw() const override;
+        /**
+         * @brief Automatically calculate the center of the `image` and set the `origin` to that point.
+         */
+        void CenterImage();
+
+        /**
+         * @brief Update logic. Calculates where to draw the image using the object's `transform` data.
+         */
         void Update() override;
+        /**
+         * @brief Draw the object.
+         */
+        void Draw() const override;
     };
 
     // ------------------------------
     // --- VARIABLE DISPLAY CLASS ---
     // ------------------------------
+    /**
+     * @brief ## Variable Display class
+     * @brief Allows for having a label with a variable value in it. The value will automatically update when the `Update()` method is called.
+     * @note This class stores a constant pointer to the variable it displays. Ownership of the object is not passed to this class.
+     * @warning This template class is compatible with all data types compatible with the `std::to_string()` method of the STL.
+     */
     template <typename T>
     class VariableDisplay : public Label{
     private:
-        const T *variable;
+        const T *variable; // Pointer to the variable to be displayed.
     public:
-        VariableDisplay(T *_variable, Transform2D _transform = {}, unsigned int _text_size = 1, Color _text_col = BLACK, ALIGNMENT _alignment = ALIGNMENT::LEFT);
-        T   &GetVariable() const;
+        /**
+         * @brief Create a new `VariableDisplay` object with default parameters.
+         * @param _variable Constant pointer to the variable to be displayed.
+         * @param _transform New object's `transform` value. Determines position, rotation and scale.
+         * @param _text_size Font size.
+         * @param _text_col Colour with which to draw the object.
+         * @param _alignment Whether ` @p transform.position ` is in the @b middle of the text, the @b left or the @b right
+         * @warning ` @p _variable ` must @b always have a defined value. Passing an undefined or null pointer @b will cause issues.
+         */
+        VariableDisplay(const T *_variable, Transform2D _transform = {}, unsigned int _text_size = 1, Color _text_col = BLACK, ALIGNMENT _alignment = ALIGNMENT::LEFT);
+        /**
+         * @brief Get a reference to the stored `variable`.
+         * @return A @b constant reference to the stored `variable`.
+         */
+        const T &GetVariable() const;
 
+        /**
+         * @brief Update the display to have the most recent value stored in `variable`.
+         */
         void Update() override;
     };
 
     template <typename T>
-    UI::VariableDisplay<T>::VariableDisplay(T *_variable, Transform2D _transform, unsigned int _text_size, Color _text_col, ALIGNMENT _alignment) : variable(_variable)
+    UI::VariableDisplay<T>::VariableDisplay(const T *_variable, Transform2D _transform, unsigned int _text_size, Color _text_col, ALIGNMENT _alignment) : variable(_variable)
     {
         transform = _transform;
         text_size = _text_size;
@@ -384,7 +446,7 @@ namespace UI
     }
 
     template <typename T>
-    inline T &VariableDisplay<T>::GetVariable() const
+    inline const T &VariableDisplay<T>::GetVariable() const
     {
         return variable;
     }

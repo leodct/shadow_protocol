@@ -6,7 +6,7 @@ using namespace UI;
 // Static member initialization
 Color Button::TINT_PRESS = { 150, 150, 150, 255 };
 
-UIElement::UIElement() : draw_order(0), enabled(true), active(true)
+UIElement::UIElement() : draw_order(0), active(true), enabled(true)
 {
 }
 
@@ -319,10 +319,6 @@ void UI::Label::SetTextColor(Color color)
     text_col = color;
 }
 
-void UI::Label::Update()
-{
-}
-
 void UI::Label::Draw() const
 {
     float spacing = 1;
@@ -354,13 +350,18 @@ UI::ImageDisplay::~ImageDisplay()
     UnloadTexture(image);
 }
 
-void UI::ImageDisplay::Draw() const
+void UI::ImageDisplay::CenterImage()
 {
-    Rectangle sourcerec = {0, 0, (float)image.width, (float)image.height};
-    Rectangle destrec   = {transform.position.x, transform.position.y, image.width * transform.scale, image.height * transform.scale};
-    DrawTexturePro(image, sourcerec, destrec, origin, transform.rotation, WHITE);
+    origin = {image.width / 2.0f, image.height / 2.0f};
 }
 
 void UI::ImageDisplay::Update()
 {
+    sr = Rectangle{0, 0, (float)image.width, (float)image.height};
+    dr = Rectangle{transform.position.x, transform.position.y, image.width * transform.scale, image.height * transform.scale};
+}
+
+void UI::ImageDisplay::Draw() const
+{
+    DrawTexturePro(image, sr, dr, origin, transform.rotation, WHITE);
 }
