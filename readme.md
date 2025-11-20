@@ -11,6 +11,7 @@
 - [Features](#features)
 - [Installation](#installation)
 - [UI System](#ui-system)
+- [Scene System](#scene-system)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -87,6 +88,13 @@ The UI system includes a range of pre-built components to help you create user i
 - **Panel**: A container that can hold other UI elements.
 - **ImageDisplay**: Displays an image as a UI element.
 - **VariableDisplay**: A special label that can display a variable's value and update it in real-time.
+
+# Scene System
+
+The Scene system is designed to provide a simple container where you can store as many GameObjects and UIs as you want, allowing you to easily enable/disable all elements, search them or manage them. It is divided into 2 parts:
+
+- **Scene class**: A container for GameObjects and UIs with methods for easy-access and mass manipulation of stored objects.
+- **SceneManager class**: The root of the game engine itself, the SceneManager class stores all the game's scenes and allows for easy loading/unloading.
 
 ## Contributing
 

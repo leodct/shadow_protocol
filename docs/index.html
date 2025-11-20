@@ -79,6 +79,7 @@ Table of Contents</h2>
 <li><a href="#features">Features</a></li>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#ui-system">UI System</a></li>
+<li><a href="#scene-system">Scene System</a></li>
 <li><a href="#contributing">Contributing</a></li>
 <li><a href="#license">License</a></li>
 </ul>
@@ -141,7 +142,14 @@ UI System</h2>
 <li><b>ImageDisplay</b>: Displays an image as a <a class="el" href="namespaceUI.html" title="Namespace containing all child classes of UIElement.">UI</a> element.</li>
 <li><b>VariableDisplay</b>: A special label that can display a variable's value and update it in real-time.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
+Scene System</h1>
+<p>The <a class="el" href="classScene.html" title="## Scene class">Scene</a> system is designed to provide a simple container where you can store as many GameObjects and UIs as you want, allowing you to easily enable/disable all elements, search them or manage them. It is divided into 2 parts:</p>
+<ul>
+<li><b><a class="el" href="classScene.html" title="## Scene class">Scene</a> class</b>: A container for GameObjects and UIs with methods for easy-access and mass manipulation of stored objects.</li>
+<li><b><a class="el" href="classSceneManager.html" title="## SceneManager class">SceneManager</a> class</b>: The root of the game engine itself, the <a class="el" href="classSceneManager.html" title="## SceneManager class">SceneManager</a> class stores all the game's scenes and allows for easy loading/unloading.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Contributing</h2>
 <p>We welcome contributions to RGame! If you want to help improve this project, please follow these steps:</p>
 <ol type="1">
@@ -152,13 +160,13 @@ Contributing</h2>
 <li>Open a Pull Request with a description of your changes.</li>
 </ol>
 <p>Before submitting a PR, make sure your code passes the tests and follows the project's coding conventions.</p>
-<h3><a class="anchor" id="autotoc_md21"></a>
+<h3><a class="anchor" id="autotoc_md22"></a>
 Reporting Issues</h3>
 <p>If you encounter any bugs or have feature requests, please open an issue in the <a href="https://github.com/yourusername/rgame/issues">GitHub repository</a>.</p>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 License</h2>
 <p>RGame is open-source software released under the [MIT License](LICENSE).</p>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Acknowledgements</h2>
 <ul>
 <li><b>Raylib</b>: This project uses <a href="https://github.com/raysan5/raylib">Raylib</a>, an excellent and easy-to-use game development library, as the foundation for graphics and input handling.</li>
